@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace GerenciadorDeFestas.Dominio.ModuloItem
+﻿namespace GerenciadorDeFestas.Dominio.ModuloItem
 {
-    internal class IRepositorioItem
+    public class IRepositorioItem 
     {
     }
 }

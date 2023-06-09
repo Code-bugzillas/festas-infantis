@@ -1,10 +1,10 @@
 ﻿using GerenciadorDeFestas.Dominio.Compartilhado;
 
-namespace GerenciadorDeFestas.Dominio.ModuloItem
+namespace GerenciadorDeFestas.Dominio.ModuloAluguel
 {
-    public class Item : EntidadeBase<Item>
+    public class Aluguel : EntidadeBase<Aluguel>
     {
-        public override void AtualizarInformacoes(Item registroAtualizado)
+        public override void AtualizarInformacoes(Aluguel registroAtualizado)
         {
             throw new NotImplementedException();
         }
