@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="ModuloAluguel\" />
+    <Folder Include="ModuloCliente\" />
+    <Folder Include="ModuloItem\" />
+    <Folder Include="ModuloTema\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GerenciadorDeFestas.Dominio\GerenciadorDeFestas.Dominio.csproj" />
+  </ItemGroup>
+
+</Project>
