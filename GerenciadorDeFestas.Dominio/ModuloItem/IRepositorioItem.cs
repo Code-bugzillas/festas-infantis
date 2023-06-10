@@ -1,6 +1,9 @@
-﻿namespace GerenciadorDeFestas.Dominio.ModuloItem
+﻿using GerenciadorDeFestas.Dominio.Compartilhado;
+using GerenciadorDeFestas.Dominio.ModuloAluguel;
+
+namespace GerenciadorDeFestas.Dominio.ModuloItem
 {
-    public class IRepositorioItem 
+    public interface IRepositorioItem : IRepositorioBase<Item>
     {
     }
 }

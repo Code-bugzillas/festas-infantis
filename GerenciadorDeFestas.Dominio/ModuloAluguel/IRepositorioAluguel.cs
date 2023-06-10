@@ -2,7 +2,7 @@
 
 namespace GerenciadorDeFestas.Dominio.ModuloAluguel
 {
-    public class IRepositorioAluguel 
+    public interface IRepositorioAluguel : IRepositorioBase<Aluguel>
     {
     }
 }

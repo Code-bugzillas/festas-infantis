@@ -1,6 +1,8 @@
-﻿namespace GerenciadorDeFestas.Dominio.ModuloCliente
+﻿using GerenciadorDeFestas.Dominio.Compartilhado;
+
+namespace GerenciadorDeFestas.Dominio.ModuloCliente
 {
-    public class IRepositorioCliente
+    public interface IRepositorioCliente : IRepositorioBase<Cliente>
     {
     }
 }

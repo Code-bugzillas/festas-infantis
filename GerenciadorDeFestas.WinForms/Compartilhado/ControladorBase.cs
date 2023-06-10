@@ -10,7 +10,7 @@ namespace GerenciadorDeFestas.WinForms.Compartilhado
 
         public abstract string ToolTipExcluir { get; }
 
-        public abstract string ToolTipPagamento { get; }
+        public virtual string ToolTipPagamento { get; }
 
         public virtual bool InserirHabilitado { get { return true; } }
 

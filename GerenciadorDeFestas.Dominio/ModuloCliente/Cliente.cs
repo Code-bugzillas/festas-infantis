@@ -2,7 +2,7 @@
 
 namespace GerenciadorDeFestas.Dominio.ModuloCliente
 {
-    internal class Cliente : EntidadeBase<Cliente>
+    public class Cliente : EntidadeBase<Cliente>
     {
         public override void AtualizarInformacoes(Cliente registroAtualizado)
         {
