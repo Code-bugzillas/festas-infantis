@@ -1,6 +1,6 @@
 ﻿namespace GerenciadorDeFestas.WinForms.Compartilhado
 {
-    public class FormExtension
+    public static class FormExtension
     {
         public static void ConfigurarDialog(this Form form)
         {

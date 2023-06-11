@@ -2,7 +2,7 @@
 
 namespace GerenciadorDeFestas.Dominio.ModuloTema
 {
-    internal class Tema : EntidadeBase<Tema>
+    public class Tema : EntidadeBase<Tema>
     {
         public override void AtualizarInformacoes(Tema registroAtualizado)
         {

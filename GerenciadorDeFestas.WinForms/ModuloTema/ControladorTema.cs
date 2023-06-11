@@ -10,8 +10,6 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
 
         public override string ToolTipExcluir => throw new NotImplementedException();
 
-        public override string ToolTipPagamento => throw new NotImplementedException();
-
         public override void Editar()
         {
             throw new NotImplementedException();

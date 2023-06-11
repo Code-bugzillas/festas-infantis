@@ -1,43 +1,36 @@
 ﻿using GerenciadorDeFestas.Dominio.ModuloCliente;
+using GerenciadorDeFestas.WinForms.Compartilhado;
 
 namespace GerenciadorDeFestas.WinForms.ModuloCliente
 {
     public partial class TelaClienteForm : Form
     {
-        public TelaClienteForm()
+        private Cliente cliente;
+
+        public TelaClienteForm(List<Cliente> clientes)
         {
             InitializeComponent();
 
         }
+
         public Cliente ObterCliente()
         {
             int id = Convert.ToInt32(txtId.Text);
-
             string nome = txtNome.Text;
-
             string telefone = txtTelefone.Text;
+            bool tipoCliente = rdbAntigo.Checked;
 
-
-
-
-
-            Cliente cliente = new Cliente(nome, telefone);
-
-            if (id > 0)
-                cliente.id = id;
+            cliente = new Cliente(nome, telefone, tipoCliente);
+            cliente.id = id;
 
             return cliente;
         }
 
-        public void ConfigurarTela(Cliente cliente)
+        public void ConfigurarTela(Cliente clienteSelecionado)
         {
-            txtId.Text = cliente.id.ToString();
-
-            txtNome.Text = cliente.nome;
-
-            txtTelefone.Text = cliente.telefone;
-
-
+            txtId.Text = clienteSelecionado.id.ToString();
+            txtNome.Text = clienteSelecionado.nome;
+            txtTelefone.Text = clienteSelecionado.telefone;
         }
 
         private void btnGravar_Click(object sender, EventArgs e)
@@ -52,8 +45,6 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
 
                 DialogResult = DialogResult.None;
             }
-
-
         }
     }
 }

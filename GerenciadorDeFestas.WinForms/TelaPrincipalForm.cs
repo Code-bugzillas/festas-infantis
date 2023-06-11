@@ -1,3 +1,4 @@
+using GerenciadorDeFestas.Dominio.ModuloCliente;
 using GerenciadorDeFestas.Infra.Dados.Arquivo.Compartilhado;
 using GerenciadorDeFestas.Infra.Dados.Arquivo.ModuloCliente;
 using GerenciadorDeFestas.WinForms.Compartilhado;
@@ -5,7 +6,6 @@ using GerenciadorDeFestas.WinForms.ModuloAluguel;
 using GerenciadorDeFestas.WinForms.ModuloCliente;
 using GerenciadorDeFestas.WinForms.ModuloItem;
 using GerenciadorDeFestas.WinForms.ModuloTema;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GerenciadorDeFestas.WinForms
 {
@@ -17,7 +17,7 @@ namespace GerenciadorDeFestas.WinForms
 
         static ContextoDados contexto = new ContextoDados(carregarDados: true);
 
-        //aqui vai os instanciamentos dos repositorios
+        private IRepositorioCliente repositorioCliente = new RepositorioClienteEmArquivo(contexto);
 
         public TelaPrincipalForm()
         {
@@ -89,7 +89,7 @@ namespace GerenciadorDeFestas.WinForms
 
         private void clientesMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorCliente();
+            controlador = new ControladorCliente(repositorioCliente);
 
             ConfigurarTelaPrincipal(controlador);
         }

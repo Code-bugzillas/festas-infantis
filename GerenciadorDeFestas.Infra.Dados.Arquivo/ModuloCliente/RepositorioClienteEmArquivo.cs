@@ -11,7 +11,7 @@ namespace GerenciadorDeFestas.Infra.Dados.Arquivo.ModuloCliente
 
         protected override List<Cliente> ObterRegistros()
         {
-            throw new NotImplementedException();
+            return contextoDados.clientes;
         }
     }
 }
