@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GerenciadorDeFestas.Dominio.ModuloCliente;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,16 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
         public TabelaClienteControl()
         {
             InitializeComponent();
+        }
+
+        internal void AtualizarRegistros(List<Cliente> clientes)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal int ObterIdSelecionado()
+        {
+            throw new NotImplementedException();
         }
     }
 }
