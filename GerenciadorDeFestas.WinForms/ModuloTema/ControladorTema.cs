@@ -47,10 +47,6 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
             {
                 Tema tema = telaTema.ObterTema();
 
-                decimal valor = tema.CalcularValor();
-
-                tema.valor = valor;
-
                 repositorioTema.Editar(tema.id, tema);
 
                 CarregarTemas();

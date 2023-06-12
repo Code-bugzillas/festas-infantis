@@ -55,7 +55,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
 
             foreach(Tema tema in temas) 
             {
-                grid.Rows.Add(tema.id, tema.nome, tema.valor);
+                grid.Rows.Add(tema.id, tema.nome, tema.CalcularValor());
             }
         }
 

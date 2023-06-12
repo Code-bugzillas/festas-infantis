@@ -26,12 +26,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
                 valor = -1;
             }
 
-
             Tema tema = new Tema(nome, valor);
 
             tema.id = id;
 
-            tema.itens.AddRange(chListItens.CheckedItems.Cast<Item>());
+            tema.itens = chListItens.CheckedItems.Cast<Item>().ToList();
 
             return tema;
         }
@@ -77,17 +76,6 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
 
                 DialogResult = DialogResult.None;
             }
-        }
-
-        private void chListItens_ClientSizeChanged(object sender, EventArgs e)
-        {
-            Tema tema = ObterTema();
-
-            tema.itens.AddRange(chListItens.CheckedItems.Cast<Item>());
-
-            decimal valor = tema.CalcularValor();
-
-            tema.valor = valor;
         }
     }
 }

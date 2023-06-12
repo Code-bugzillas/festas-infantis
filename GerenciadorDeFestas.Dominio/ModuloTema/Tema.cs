@@ -25,6 +25,8 @@ namespace GerenciadorDeFestas.Dominio.ModuloTema
 
         public decimal CalcularValor()
         {
+            valorTotal = 0; 
+
             foreach (Item item in itens)
             {
                 valorTotal += item.valor;

@@ -46,7 +46,6 @@
             chListItens.Name = "chListItens";
             chListItens.Size = new Size(425, 148);
             chListItens.TabIndex = 21;
-            chListItens.ClientSizeChanged += chListItens_ClientSizeChanged;
             // 
             // txtTema
             // 
