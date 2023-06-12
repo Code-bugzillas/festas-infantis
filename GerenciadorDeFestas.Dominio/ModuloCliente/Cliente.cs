@@ -27,6 +27,18 @@ namespace GerenciadorDeFestas.Dominio.ModuloCliente
             this.clienteAntigo = registroAtualizado.clienteAntigo;
         }
 
+        public decimal AplicarDesconto()
+        {
+            decimal desconto = 0;
+
+            if(clienteAntigo)
+            {
+                desconto = 10 / 100;
+            }
+
+            return desconto;
+        }
+
         public override string ToString()
         {
             return "Id: " + id + ", " + nome + ", Telefone: " + telefone;

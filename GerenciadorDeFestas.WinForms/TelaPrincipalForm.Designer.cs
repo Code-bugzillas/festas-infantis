@@ -182,9 +182,10 @@
             // panelRegistros
             // 
             panelRegistros.BorderStyle = BorderStyle.FixedSingle;
-            panelRegistros.Location = new Point(0, 67);
+            panelRegistros.Dock = DockStyle.Fill;
+            panelRegistros.Location = new Point(0, 69);
             panelRegistros.Name = "panelRegistros";
-            panelRegistros.Size = new Size(657, 244);
+            panelRegistros.Size = new Size(657, 267);
             panelRegistros.TabIndex = 4;
             // 
             // statusStrip1

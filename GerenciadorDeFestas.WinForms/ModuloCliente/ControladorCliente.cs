@@ -20,6 +20,8 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
 
         public override string ToolTipExcluir { get { return "Excluir Cliente existente"; } }
 
+        public override bool PagamentoHabilitado => false;
+
         public override void Inserir()
         {
             TelaClienteForm telaCliente = new TelaClienteForm(repositorioCliente.SelecionarTodos());
