@@ -37,26 +37,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
             else
                 rdbNovo.Checked = true;
         }
-
-        private void btnGravar_Click(object sender, EventArgs e)
+        private void btnGravar_Click_1(object sender, EventArgs e)
         {
             Cliente contato = ObterCliente();
 
             string[] erros = contato.Validar();
-
-            if (erros.Length > 0)
-            {
-                TelaPrincipalForm.Instancia.AtualizarRodape(erros[0]);
-
-                DialogResult = DialogResult.None;
-            }
-        }
-
-        private void btnGravar_Click_1(object sender, EventArgs e)
-        {
-            Cliente cliente = ObterCliente();
-
-            string[] erros = cliente.Validar();
 
             if (erros.Length > 0)
             {

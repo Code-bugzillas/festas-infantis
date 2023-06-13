@@ -1,40 +1,132 @@
-﻿using GerenciadorDeFestas.WinForms.Compartilhado;
+﻿using GerenciadorDeFestas.Dominio.ModuloAluguel;
+using GerenciadorDeFestas.Dominio.ModuloCliente;
+using GerenciadorDeFestas.Dominio.ModuloTema;
+using GerenciadorDeFestas.WinForms.Compartilhado;
+using GerenciadorDeFestas.WinForms.ModuloCliente;
 
 namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 {
     public class ControladorAluguel : ControladorBase
     {
-        public override string ToolTipInserir => throw new NotImplementedException();
+        private IRepositorioCliente repositorioCliente;
+        private IRepositorioTema repositorioTema;
+        private IRepositorioAluguel repositorioAluguel;
 
-        public override string ToolTipEditar => throw new NotImplementedException();
+        private TabelaAluguelControl tabelaAluguel;
 
-        public override string ToolTipExcluir => throw new NotImplementedException();
+        public ControladorAluguel(IRepositorioAluguel repositorioAluguel, IRepositorioCliente repositorioCliente, IRepositorioTema repositorioTema)
+        {
+            this.repositorioAluguel = repositorioAluguel;
+            this.repositorioCliente = repositorioCliente;
+            this.repositorioTema = repositorioTema;
+        }
 
-        public override string ToolTipPagamento => throw new NotImplementedException();
+        public override string ToolTipInserir { get { return "Inserir novo Aluguel"; } }
+
+        public override string ToolTipEditar { get { return "Editar Aluguel existente"; } }
+
+        public override string ToolTipExcluir { get { return "Excluir Aluguel existente"; } }
+
+        public override string ToolTipPagamento { get { return "Gerenciar pagamento"; } }
+
+        public override void Inserir()
+        {
+            TelaAluguelForm telaAluguel = new TelaAluguelForm(repositorioCliente.SelecionarTodos(), repositorioTema.SelecionarTodos());
+
+            DialogResult opcaoEscolhida = telaAluguel.ShowDialog();
+
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+                Aluguel aluguel = telaAluguel.ObterAluguel();
+
+                repositorioAluguel.Inserir(aluguel);
+
+                CarregarAlugueis();
+            }
+        }
 
         public override void Editar()
         {
-            throw new NotImplementedException();
+            Aluguel aluguelSelecionado = ObterAluguelSelecionado();
+
+            if (aluguelSelecionado == null)
+            {
+                MessageBox.Show($"Selecione um aluguel primeiro!",
+                    "Edição de Alugueis",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+
+                return;
+            }
+
+            TelaAluguelForm telaAluguel = new TelaAluguelForm(repositorioCliente.SelecionarTodos(), repositorioTema.SelecionarTodos());
+            telaAluguel.ConfigurarTela(aluguelSelecionado);
+
+            DialogResult opcaoEscolhida = telaAluguel.ShowDialog();
+
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+                Aluguel aluguel = telaAluguel.ObterAluguel();
+
+                repositorioAluguel.Editar(aluguel.id, aluguel);
+
+                CarregarAlugueis();
+            }
         }
 
         public override void Excluir()
         {
-            throw new NotImplementedException();
+            Aluguel aluguel = ObterAluguelSelecionado();
+
+            if (aluguel == null)
+            {
+                MessageBox.Show($"Selecione um aluguel primeiro!",
+                    "Exclusão de Alugueis",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+
+                return;
+            }
+
+            DialogResult opcaoEscolhida = MessageBox.Show($"Deseja excluir o Aluguel {aluguel.cliente.nome}?", "Exclusão de Alugueis",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+                repositorioAluguel.Excluir(aluguel);
+
+                CarregarAlugueis();
+            }
         }
 
-        public override void Inserir()
+        private Aluguel ObterAluguelSelecionado()
         {
-            throw new NotImplementedException();
+            int id = tabelaAluguel.ObterIdSelecionado();
+
+            return repositorioAluguel.SelecionarPorId(id);
+        }
+
+        private void CarregarAlugueis()
+        {
+            List<Aluguel> alugueis = repositorioAluguel.SelecionarTodos();
+
+            tabelaAluguel.AtualizarRegistros(alugueis);
         }
 
         public override UserControl ObterListagem()
         {
-            throw new NotImplementedException();
+            if (tabelaAluguel == null)
+                tabelaAluguel = new TabelaAluguelControl();
+
+            CarregarAlugueis();
+
+            return tabelaAluguel;
         }
 
         public override string ObterTipoCadastro()
         {
-            throw new NotImplementedException();
+            return "Cadastro de Aluguel";
         }
     }
 }
+

@@ -119,7 +119,7 @@ namespace GerenciadorDeFestas.WinForms
 
         private void aluguelMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorAluguel();
+            controlador = new ControladorAluguel(repositorioAluguel, repositorioCliente, repositorioTema);
 
             ConfigurarTelaPrincipal(controlador);
         }
