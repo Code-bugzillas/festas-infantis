@@ -33,7 +33,7 @@
             btnGravar = new Button();
             btnCancelar = new Button();
             label1 = new Label();
-            rdbZero = new RadioButton();
+            rdbQuarenta = new RadioButton();
             rdbCinquenta = new RadioButton();
             rdbCem = new RadioButton();
             SuspendLayout();
@@ -88,16 +88,16 @@
             label1.TabIndex = 11;
             label1.Text = "Porcentagem do valor que o cliente pagou";
             // 
-            // rdbZero
+            // rdbQuarenta
             // 
-            rdbZero.AutoSize = true;
-            rdbZero.Location = new Point(40, 57);
-            rdbZero.Name = "rdbZero";
-            rdbZero.Size = new Size(41, 19);
-            rdbZero.TabIndex = 12;
-            rdbZero.TabStop = true;
-            rdbZero.Text = "0%";
-            rdbZero.UseVisualStyleBackColor = true;
+            rdbQuarenta.AutoSize = true;
+            rdbQuarenta.Location = new Point(40, 57);
+            rdbQuarenta.Name = "rdbQuarenta";
+            rdbQuarenta.Size = new Size(47, 19);
+            rdbQuarenta.TabIndex = 12;
+            rdbQuarenta.TabStop = true;
+            rdbQuarenta.Text = "40%";
+            rdbQuarenta.UseVisualStyleBackColor = true;
             // 
             // rdbCinquenta
             // 
@@ -129,7 +129,7 @@
             ClientSize = new Size(330, 148);
             Controls.Add(rdbCem);
             Controls.Add(rdbCinquenta);
-            Controls.Add(rdbZero);
+            Controls.Add(rdbQuarenta);
             Controls.Add(label1);
             Controls.Add(txtId);
             Controls.Add(label2);
@@ -148,7 +148,7 @@
         private Button btnGravar;
         private Button btnCancelar;
         private Label label1;
-        private RadioButton rdbZero;
+        private RadioButton rdbQuarenta;
         private RadioButton rdbCinquenta;
         private RadioButton rdbCem;
     }

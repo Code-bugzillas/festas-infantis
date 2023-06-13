@@ -1,5 +1,7 @@
-﻿using GerenciadorDeFestas.Dominio.ModuloCliente;
+﻿using GerenciadorDeFestas.Dominio.ModuloAluguel;
+using GerenciadorDeFestas.Dominio.ModuloCliente;
 using GerenciadorDeFestas.WinForms.Compartilhado;
+using GerenciadorDeFestas.WinForms.ModuloAluguel;
 
 namespace GerenciadorDeFestas.WinForms.ModuloCliente
 {

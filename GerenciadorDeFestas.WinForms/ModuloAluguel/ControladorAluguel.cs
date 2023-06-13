@@ -99,6 +99,24 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
             }
         }
 
+        public override void Pagamento()
+        {
+            TelaPagamentoForm telaPagamento = new TelaPagamentoForm();
+
+            Aluguel aluguelSelecionado = ObterAluguelSelecionado();
+
+            DialogResult opcaoEscolhida = telaPagamento.ShowDialog();
+
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+                telaPagamento.PorcentagemPaga(aluguelSelecionado);
+
+                aluguelSelecionado.CalcularValorAhPagar();
+
+                CarregarAlugueis();
+            }
+        }
+
         private Aluguel ObterAluguelSelecionado()
         {
             int id = tabelaAluguel.ObterIdSelecionado();

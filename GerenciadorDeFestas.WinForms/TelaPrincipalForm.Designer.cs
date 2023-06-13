@@ -35,7 +35,6 @@
             ItensMenuItem = new ToolStripMenuItem();
             TemasMenuItem = new ToolStripMenuItem();
             aluguelMenuItem = new ToolStripMenuItem();
-            cadastrosToolStripMenuItem1 = new ToolStripMenuItem();
             toolBar = new ToolStrip();
             btnInserir = new ToolStripButton();
             btnEditar = new ToolStripButton();
@@ -64,7 +63,7 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientesMenuItem, TemasMenu, aluguelMenuItem, cadastrosToolStripMenuItem1 });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientesMenuItem, TemasMenu, aluguelMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(71, 20);
             cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -72,7 +71,7 @@
             // clientesMenuItem
             // 
             clientesMenuItem.Name = "clientesMenuItem";
-            clientesMenuItem.Size = new Size(126, 22);
+            clientesMenuItem.Size = new Size(180, 22);
             clientesMenuItem.Text = "Cliente";
             clientesMenuItem.Click += clientesMenuItem_Click;
             // 
@@ -80,7 +79,7 @@
             // 
             TemasMenu.DropDownItems.AddRange(new ToolStripItem[] { ItensMenuItem, TemasMenuItem });
             TemasMenu.Name = "TemasMenu";
-            TemasMenu.Size = new Size(126, 22);
+            TemasMenu.Size = new Size(180, 22);
             TemasMenu.Text = "Temas";
             // 
             // ItensMenuItem
@@ -100,15 +99,9 @@
             // aluguelMenuItem
             // 
             aluguelMenuItem.Name = "aluguelMenuItem";
-            aluguelMenuItem.Size = new Size(126, 22);
+            aluguelMenuItem.Size = new Size(180, 22);
             aluguelMenuItem.Text = "Aluguel";
             aluguelMenuItem.Click += aluguelMenuItem_Click;
-            // 
-            // cadastrosToolStripMenuItem1
-            // 
-            cadastrosToolStripMenuItem1.Name = "cadastrosToolStripMenuItem1";
-            cadastrosToolStripMenuItem1.Size = new Size(126, 22);
-            cadastrosToolStripMenuItem1.Text = "Cadastros";
             // 
             // toolBar
             // 
@@ -255,6 +248,5 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel labelRodape;
         private ToolStripMenuItem TemasMenuItem;
-        private ToolStripMenuItem cadastrosToolStripMenuItem1;
     }
 }

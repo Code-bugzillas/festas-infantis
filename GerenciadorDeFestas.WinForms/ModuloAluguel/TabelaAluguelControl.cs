@@ -22,10 +22,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
             foreach (Aluguel aluguel in alugueis)
             {
-                grid.Rows.Add(aluguel.id, aluguel.cliente, aluguel.tema, aluguel.data, aluguel.cep, aluguel.dataFechamento, aluguel.pago);
+                grid.Rows.Add(aluguel.id, aluguel.cliente, aluguel.tema, aluguel.data, aluguel.cep, aluguel.dataFechamento, aluguel.porcentagemPaga, aluguel.ValorAhPagar);
             }
             TelaPrincipalForm.Instancia.AtualizarRodape($"Visualizando {alugueis.Count} alugueis");
         }
+
 
         private void ConfigurarColunas()
         {
@@ -65,6 +66,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
                 {
                     Name = "pago",
                     HeaderText = "% paga"
+                },
+                new DataGridViewTextBoxColumn()
+                {
+                    Name = "valorAhPagar",
+                    HeaderText = "Valor a Pagar"
                 }
             };
             grid.Columns.AddRange(colunas);

@@ -17,7 +17,8 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
         public string rua;
 
         public DateTime dataFechamento;
-        public bool pago;
+        public decimal porcentagemPaga;
+        public decimal ValorAhPagar;
 
         public Aluguel(Cliente cliente, Tema tema, DateTime data, DateTime horaInicio, DateTime horaFinal, string cep, string numero, string rua)
         {
@@ -38,6 +39,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
 
         public override void AtualizarInformacoes(Aluguel registroAtualizado)
         {
+            this.id = registroAtualizado.id;
             this.cliente = registroAtualizado.cliente;
             this.tema = registroAtualizado.tema;
             this.data = registroAtualizado.data;
@@ -62,6 +64,24 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
                 erros.Add("O campo 'Numero' é obrigatório");
 
             return erros.ToArray();
+        }
+
+        public decimal CalcularDesconto()
+        {
+            if (cliente.clienteAntigo)
+            {
+                return tema.valorTotal * (decimal)0.90;
+            }
+            return tema.valorTotal;
+        }
+
+        public decimal CalcularValorAhPagar()
+        {
+            decimal valorAhPagar = CalcularDesconto();
+
+            valorAhPagar = valorAhPagar - (valorAhPagar * porcentagemPaga / 100);
+
+            return valorAhPagar;
         }
     }
 }
