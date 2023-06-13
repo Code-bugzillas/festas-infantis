@@ -70,16 +70,16 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
         {
             if (cliente.clienteAntigo)
             {
-                return tema.valorTotal * (decimal)0.90;
+                return tema.Resultado - (tema.Resultado * 10/100);
             }
-            return tema.valorTotal;
+            return tema.Resultado;
         }
 
         public decimal CalcularValorAhPagar()
         {
             decimal valorAhPagar = CalcularDesconto();
 
-            valorAhPagar = valorAhPagar - (valorAhPagar * porcentagemPaga / 100);
+            valorAhPagar = valorAhPagar - (valorAhPagar * (porcentagemPaga / 100));
 
             return valorAhPagar;
         }

@@ -111,7 +111,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
             {
                 telaPagamento.PorcentagemPaga(aluguelSelecionado);
 
-                aluguelSelecionado.CalcularValorAhPagar();
+                aluguelSelecionado.ValorAhPagar = aluguelSelecionado.CalcularValorAhPagar();
 
                 CarregarAlugueis();
             }
