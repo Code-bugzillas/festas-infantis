@@ -59,5 +59,56 @@ namespace GerenciadorDeFestas.WinForms.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1486564407_plus_green_81521 {
+            get {
+                object obj = ResourceManager.GetObject("1486564407-plus-green_81521", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592815_compose_create_edit_edit_file_office_pencil_writing_107734 {
+            get {
+                object obj = ResourceManager.GetObject("3592815-compose-create-edit-edit-file-office-pencil-writing_107734", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592821_garbage_can_general_office_recycle_bin_rubbish_bin_trash_bin_trash_can_107760 {
+            get {
+                object obj = ResourceManager.GetObject("3592821-garbage-can-general-office-recycle-bin-rubbish-bin-trash-bin-trash-can_10" +
+                        "7760", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3592863_accounting_calculate_calculation_calculator_general_math_office_107744 {
+            get {
+                object obj = ResourceManager.GetObject("3592863-accounting-calculate-calculation-calculator-general-math-office_107744", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap trash_recycle_bin_eco_ecology_recyclable_icon_186012 {
+            get {
+                object obj = ResourceManager.GetObject("trash_recycle_bin_eco_ecology_recyclable_icon_186012", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

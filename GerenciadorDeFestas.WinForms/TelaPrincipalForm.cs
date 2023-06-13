@@ -1,7 +1,9 @@
+using GerenciadorDeFestas.Dominio.ModuloAluguel;
 using GerenciadorDeFestas.Dominio.ModuloCliente;
 using GerenciadorDeFestas.Dominio.ModuloItem;
 using GerenciadorDeFestas.Dominio.ModuloTema;
 using GerenciadorDeFestas.Infra.Dados.Arquivo.Compartilhado;
+using GerenciadorDeFestas.Infra.Dados.Arquivo.ModuloAluguel;
 using GerenciadorDeFestas.Infra.Dados.Arquivo.ModuloCliente;
 using GerenciadorDeFestas.Infra.Dados.Arquivo.ModuloItem;
 using GerenciadorDeFestas.Infra.Dados.Arquivo.ModuloTema;
@@ -24,6 +26,7 @@ namespace GerenciadorDeFestas.WinForms
         private IRepositorioCliente repositorioCliente = new RepositorioClienteEmArquivo(contexto);
         private IRepositorioItem repositorioItem = new RepositorioItemEmArquivo(contexto);
         private IRepositorioTema repositorioTema = new RepositorioTemaEmArquivo(contexto);
+        private IRepositorioAluguel repositorioAluguel = new RepositorioAluguelEmArquivo(contexto);
 
         public TelaPrincipalForm()
         {

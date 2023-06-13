@@ -28,17 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            grid = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)grid).BeginInit();
             SuspendLayout();
             // 
-            // TabelaAluguelForm
+            // grid
+            // 
+            grid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grid.Dock = DockStyle.Fill;
+            grid.Location = new Point(0, 0);
+            grid.Name = "grid";
+            grid.RowTemplate.Height = 25;
+            grid.Size = new Size(307, 304);
+            grid.TabIndex = 0;
+            // 
+            // TabelaAluguelControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Name = "TabelaAluguelForm";
+            Controls.Add(grid);
+            Name = "TabelaAluguelControl";
             Size = new Size(307, 304);
+            ((System.ComponentModel.ISupportInitialize)grid).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
+        private DataGridView grid;
     }
 }

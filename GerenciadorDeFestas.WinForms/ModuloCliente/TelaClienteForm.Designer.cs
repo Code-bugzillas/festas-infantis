@@ -43,29 +43,33 @@
             // 
             // btnCancelar
             // 
+            btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnCancelar.BackColor = Color.PowderBlue;
             btnCancelar.DialogResult = DialogResult.Cancel;
             btnCancelar.Location = new Point(356, 139);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(88, 41);
             btnCancelar.TabIndex = 0;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.UseVisualStyleBackColor = false;
             // 
             // btnGravar
             // 
+            btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnGravar.BackColor = Color.PowderBlue;
             btnGravar.DialogResult = DialogResult.OK;
             btnGravar.Location = new Point(262, 139);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(88, 41);
             btnGravar.TabIndex = 1;
             btnGravar.Text = "Gravar";
-            btnGravar.UseVisualStyleBackColor = true;
+            btnGravar.UseVisualStyleBackColor = false;
             btnGravar.Click += btnGravar_Click_1;
             // 
             // rdbAntigo
             // 
             rdbAntigo.AutoSize = true;
-            rdbAntigo.Location = new Point(230, 96);
+            rdbAntigo.Location = new Point(289, 96);
             rdbAntigo.Name = "rdbAntigo";
             rdbAntigo.Size = new Size(61, 19);
             rdbAntigo.TabIndex = 2;
@@ -76,7 +80,7 @@
             // rdbNovo
             // 
             rdbNovo.AutoSize = true;
-            rdbNovo.Location = new Point(163, 96);
+            rdbNovo.Location = new Point(222, 96);
             rdbNovo.Name = "rdbNovo";
             rdbNovo.Size = new Size(54, 19);
             rdbNovo.TabIndex = 3;
@@ -87,7 +91,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(19, 96);
+            label1.Location = new Point(78, 96);
             label1.Name = "label1";
             label1.Size = new Size(138, 15);
             label1.TabIndex = 4;
@@ -146,6 +150,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.AliceBlue;
             ClientSize = new Size(456, 192);
             Controls.Add(txtTelefone);
             Controls.Add(txtNome);

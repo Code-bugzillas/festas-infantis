@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaPrincipalForm));
             menuBar = new MenuStrip();
             cadastrosToolStripMenuItem = new ToolStripMenuItem();
             clientesMenuItem = new ToolStripMenuItem();
@@ -36,6 +35,7 @@
             ItensMenuItem = new ToolStripMenuItem();
             TemasMenuItem = new ToolStripMenuItem();
             aluguelMenuItem = new ToolStripMenuItem();
+            cadastrosToolStripMenuItem1 = new ToolStripMenuItem();
             toolBar = new ToolStrip();
             btnInserir = new ToolStripButton();
             btnEditar = new ToolStripButton();
@@ -54,7 +54,7 @@
             // 
             // menuBar
             // 
-            menuBar.BackColor = Color.LightSlateGray;
+            menuBar.BackColor = Color.CadetBlue;
             menuBar.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem });
             menuBar.Location = new Point(0, 0);
             menuBar.Name = "menuBar";
@@ -64,7 +64,7 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientesMenuItem, TemasMenu, aluguelMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientesMenuItem, TemasMenu, aluguelMenuItem, cadastrosToolStripMenuItem1 });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new Size(71, 20);
             cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -72,7 +72,7 @@
             // clientesMenuItem
             // 
             clientesMenuItem.Name = "clientesMenuItem";
-            clientesMenuItem.Size = new Size(115, 22);
+            clientesMenuItem.Size = new Size(126, 22);
             clientesMenuItem.Text = "Cliente";
             clientesMenuItem.Click += clientesMenuItem_Click;
             // 
@@ -80,7 +80,7 @@
             // 
             TemasMenu.DropDownItems.AddRange(new ToolStripItem[] { ItensMenuItem, TemasMenuItem });
             TemasMenu.Name = "TemasMenu";
-            TemasMenu.Size = new Size(115, 22);
+            TemasMenu.Size = new Size(126, 22);
             TemasMenu.Text = "Temas";
             // 
             // ItensMenuItem
@@ -100,92 +100,98 @@
             // aluguelMenuItem
             // 
             aluguelMenuItem.Name = "aluguelMenuItem";
-            aluguelMenuItem.Size = new Size(115, 22);
+            aluguelMenuItem.Size = new Size(126, 22);
             aluguelMenuItem.Text = "Aluguel";
             aluguelMenuItem.Click += aluguelMenuItem_Click;
             // 
+            // cadastrosToolStripMenuItem1
+            // 
+            cadastrosToolStripMenuItem1.Name = "cadastrosToolStripMenuItem1";
+            cadastrosToolStripMenuItem1.Size = new Size(126, 22);
+            cadastrosToolStripMenuItem1.Text = "Cadastros";
+            // 
             // toolBar
             // 
-            toolBar.BackColor = Color.LightSteelBlue;
+            toolBar.BackColor = Color.PowderBlue;
             toolBar.Items.AddRange(new ToolStripItem[] { btnInserir, btnEditar, btnExcluir, toolStripSeparator1, btnPagamento, toolStripSeparator2, labelTipoCadastro });
             toolBar.Location = new Point(0, 24);
             toolBar.Name = "toolBar";
             toolBar.RenderMode = ToolStripRenderMode.System;
-            toolBar.Size = new Size(657, 45);
+            toolBar.Size = new Size(657, 53);
             toolBar.TabIndex = 2;
             toolBar.Text = "toolStrip1";
             // 
             // btnInserir
             // 
             btnInserir.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnInserir.Image = (Image)resources.GetObject("btnInserir.Image");
+            btnInserir.Image = Properties.Resources._1486564407_plus_green_81521;
             btnInserir.ImageScaling = ToolStripItemImageScaling.None;
             btnInserir.ImageTransparentColor = Color.Magenta;
             btnInserir.Name = "btnInserir";
             btnInserir.Padding = new Padding(7);
-            btnInserir.Size = new Size(42, 42);
+            btnInserir.Size = new Size(50, 50);
             btnInserir.Text = "toolStripButton1";
             btnInserir.Click += btnInserir_Click;
             // 
             // btnEditar
             // 
             btnEditar.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnEditar.Image = (Image)resources.GetObject("btnEditar.Image");
+            btnEditar.Image = Properties.Resources._3592815_compose_create_edit_edit_file_office_pencil_writing_107734;
             btnEditar.ImageScaling = ToolStripItemImageScaling.None;
             btnEditar.ImageTransparentColor = Color.Magenta;
             btnEditar.Name = "btnEditar";
             btnEditar.Padding = new Padding(7);
-            btnEditar.Size = new Size(42, 42);
+            btnEditar.Size = new Size(50, 50);
             btnEditar.Text = "toolStripButton2";
             btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
             // 
             btnExcluir.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnExcluir.Image = (Image)resources.GetObject("btnExcluir.Image");
+            btnExcluir.Image = Properties.Resources._3592821_garbage_can_general_office_recycle_bin_rubbish_bin_trash_bin_trash_can_107760;
             btnExcluir.ImageScaling = ToolStripItemImageScaling.None;
             btnExcluir.ImageTransparentColor = Color.Magenta;
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Padding = new Padding(7);
-            btnExcluir.Size = new Size(42, 42);
+            btnExcluir.Size = new Size(50, 50);
             btnExcluir.Text = "toolStripButton3";
             btnExcluir.Click += btnExcluir_Click;
             // 
             // toolStripSeparator1
             // 
             toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(6, 45);
+            toolStripSeparator1.Size = new Size(6, 53);
             // 
             // btnPagamento
             // 
             btnPagamento.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            btnPagamento.Image = (Image)resources.GetObject("btnPagamento.Image");
+            btnPagamento.Image = Properties.Resources._3592863_accounting_calculate_calculation_calculator_general_math_office_107744;
             btnPagamento.ImageScaling = ToolStripItemImageScaling.None;
             btnPagamento.ImageTransparentColor = Color.Magenta;
             btnPagamento.Name = "btnPagamento";
             btnPagamento.Padding = new Padding(7);
-            btnPagamento.Size = new Size(42, 42);
+            btnPagamento.Size = new Size(50, 50);
             btnPagamento.Text = "toolStripButton4";
             btnPagamento.Click += btnPagamento_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(6, 45);
+            toolStripSeparator2.Size = new Size(6, 53);
             // 
             // labelTipoCadastro
             // 
             labelTipoCadastro.Name = "labelTipoCadastro";
-            labelTipoCadastro.Size = new Size(75, 42);
+            labelTipoCadastro.Size = new Size(75, 50);
             labelTipoCadastro.Text = "tipoCadastro";
             // 
             // panelRegistros
             // 
             panelRegistros.BorderStyle = BorderStyle.FixedSingle;
             panelRegistros.Dock = DockStyle.Fill;
-            panelRegistros.Location = new Point(0, 69);
+            panelRegistros.Location = new Point(0, 77);
             panelRegistros.Name = "panelRegistros";
-            panelRegistros.Size = new Size(657, 267);
+            panelRegistros.Size = new Size(657, 259);
             panelRegistros.TabIndex = 4;
             // 
             // statusStrip1
@@ -245,5 +251,6 @@
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel labelRodape;
         private ToolStripMenuItem TemasMenuItem;
+        private ToolStripMenuItem cadastrosToolStripMenuItem1;
     }
 }
