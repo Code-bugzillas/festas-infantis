@@ -124,6 +124,7 @@
             // btnInserir
             // 
             btnInserir.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnInserir.Enabled = false;
             btnInserir.Image = Properties.Resources._1486564407_plus_green_81521;
             btnInserir.ImageScaling = ToolStripItemImageScaling.None;
             btnInserir.ImageTransparentColor = Color.Magenta;
@@ -136,6 +137,7 @@
             // btnEditar
             // 
             btnEditar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnEditar.Enabled = false;
             btnEditar.Image = Properties.Resources._3592815_compose_create_edit_edit_file_office_pencil_writing_107734;
             btnEditar.ImageScaling = ToolStripItemImageScaling.None;
             btnEditar.ImageTransparentColor = Color.Magenta;
@@ -148,6 +150,7 @@
             // btnExcluir
             // 
             btnExcluir.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnExcluir.Enabled = false;
             btnExcluir.Image = Properties.Resources._3592821_garbage_can_general_office_recycle_bin_rubbish_bin_trash_bin_trash_can_107760;
             btnExcluir.ImageScaling = ToolStripItemImageScaling.None;
             btnExcluir.ImageTransparentColor = Color.Magenta;
@@ -165,6 +168,7 @@
             // btnPagamento
             // 
             btnPagamento.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnPagamento.Enabled = false;
             btnPagamento.Image = Properties.Resources._3592863_accounting_calculate_calculation_calculator_general_math_office_107744;
             btnPagamento.ImageScaling = ToolStripItemImageScaling.None;
             btnPagamento.ImageTransparentColor = Color.Magenta;
