@@ -117,6 +117,8 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
                 repositorioAluguel.AtualizarPagamentoJson(aluguelSelecionado.id, aluguelSelecionado);
 
+                aluguelSelecionado.FinalizarPagamento();
+
                 CarregarAlugueis();
             }
         }

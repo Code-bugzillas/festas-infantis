@@ -36,5 +36,9 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
             return aluguelSelecionado.porcentagemPaga = 0;
         }
+
+        private void btnGravar_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
