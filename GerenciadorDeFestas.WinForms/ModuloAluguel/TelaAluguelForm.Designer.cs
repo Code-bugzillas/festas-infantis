@@ -67,9 +67,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(358, 20);
             label2.Name = "label2";
-            label2.Size = new Size(20, 15);
+            label2.Size = new Size(17, 15);
             label2.TabIndex = 9;
-            label2.Text = "Id:";
+            label2.Text = "Id";
             // 
             // btnGravar
             // 
@@ -82,6 +82,7 @@
             btnGravar.TabIndex = 8;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = false;
+            btnGravar.Click += btnGravar_Click;
             // 
             // btnCancelar
             // 
@@ -150,6 +151,7 @@
             dtHoraFinal.Format = DateTimePickerFormat.Custom;
             dtHoraFinal.Location = new Point(79, 80);
             dtHoraFinal.Name = "dtHoraFinal";
+            dtHoraFinal.ShowUpDown = true;
             dtHoraFinal.Size = new Size(115, 23);
             dtHoraFinal.TabIndex = 5;
             // 
@@ -159,6 +161,7 @@
             dtHoraInicio.Format = DateTimePickerFormat.Custom;
             dtHoraInicio.Location = new Point(79, 51);
             dtHoraInicio.Name = "dtHoraInicio";
+            dtHoraInicio.ShowUpDown = true;
             dtHoraInicio.Size = new Size(115, 23);
             dtHoraInicio.TabIndex = 4;
             // 
@@ -277,7 +280,7 @@
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
             Name = "TelaAluguelForm";
-            Text = "TelaAluguelForm";
+            Text = "Registro de Aluguel";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);

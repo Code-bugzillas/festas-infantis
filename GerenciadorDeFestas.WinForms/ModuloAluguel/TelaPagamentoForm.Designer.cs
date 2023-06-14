@@ -51,9 +51,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(262, 15);
             label2.Name = "label2";
-            label2.Size = new Size(20, 15);
+            label2.Size = new Size(17, 15);
             label2.TabIndex = 9;
-            label2.Text = "Id:";
+            label2.Text = "Id";
             // 
             // btnGravar
             // 
@@ -66,7 +66,6 @@
             btnGravar.TabIndex = 8;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = false;
-            btnGravar.Click += btnGravar_Click;
             // 
             // btnCancelar
             // 

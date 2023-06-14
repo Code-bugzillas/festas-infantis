@@ -65,5 +65,25 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
                 cbTema.Items.Add(tema);
             }
         }
+
+        private void btnGravar_Click(object sender, EventArgs e)
+        {
+            Aluguel aluguel = ObterAluguel();
+
+            ValidarErros(aluguel);
+        }
+
+        private void ValidarErros(Aluguel aluguel)
+        {
+            string[] erros = aluguel.Validar();
+
+            if (erros.Length > 0)
+            {
+                TelaPrincipalForm.Instancia.AtualizarRodape(erros[0]);
+
+                DialogResult = DialogResult.None;
+            }
+        }
+
     }
 }

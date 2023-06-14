@@ -164,7 +164,7 @@
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
             Name = "TelaClienteForm";
-            Text = "TelaClienteForm";
+            Text = "Registro de Cliente";
             ResumeLayout(false);
             PerformLayout();
         }

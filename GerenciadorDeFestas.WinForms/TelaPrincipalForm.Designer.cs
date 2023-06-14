@@ -53,7 +53,7 @@
             // 
             // menuBar
             // 
-            menuBar.BackColor = Color.CadetBlue;
+            menuBar.BackColor = Color.LightCyan;
             menuBar.Items.AddRange(new ToolStripItem[] { cadastrosToolStripMenuItem });
             menuBar.Location = new Point(0, 0);
             menuBar.Name = "menuBar";
@@ -63,27 +63,37 @@
             // 
             // cadastrosToolStripMenuItem
             // 
+            cadastrosToolStripMenuItem.BackColor = Color.LightCyan;
             cadastrosToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { clientesMenuItem, TemasMenu, aluguelMenuItem });
+            cadastrosToolStripMenuItem.Font = new Font("Ebrima", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cadastrosToolStripMenuItem.ForeColor = Color.Black;
+            cadastrosToolStripMenuItem.Image = Properties.Resources.cake;
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            cadastrosToolStripMenuItem.Size = new Size(71, 20);
+            cadastrosToolStripMenuItem.Size = new Size(86, 20);
             cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
             // clientesMenuItem
             // 
+            clientesMenuItem.BackColor = Color.LightCyan;
+            clientesMenuItem.Image = Properties.Resources.avatar;
             clientesMenuItem.Name = "clientesMenuItem";
-            clientesMenuItem.Size = new Size(180, 22);
+            clientesMenuItem.Size = new Size(115, 22);
             clientesMenuItem.Text = "Cliente";
             clientesMenuItem.Click += clientesMenuItem_Click;
             // 
             // TemasMenu
             // 
+            TemasMenu.BackColor = Color.LightCyan;
             TemasMenu.DropDownItems.AddRange(new ToolStripItem[] { ItensMenuItem, TemasMenuItem });
+            TemasMenu.Image = Properties.Resources.party;
             TemasMenu.Name = "TemasMenu";
-            TemasMenu.Size = new Size(180, 22);
+            TemasMenu.Size = new Size(115, 22);
             TemasMenu.Text = "Temas";
             // 
             // ItensMenuItem
             // 
+            ItensMenuItem.BackColor = Color.LightCyan;
+            ItensMenuItem.Image = Properties.Resources.birthday;
             ItensMenuItem.Name = "ItensMenuItem";
             ItensMenuItem.Size = new Size(107, 22);
             ItensMenuItem.Text = "Itens";
@@ -91,6 +101,8 @@
             // 
             // TemasMenuItem
             // 
+            TemasMenuItem.BackColor = Color.LightCyan;
+            TemasMenuItem.Image = Properties.Resources.wind;
             TemasMenuItem.Name = "TemasMenuItem";
             TemasMenuItem.Size = new Size(107, 22);
             TemasMenuItem.Text = "Temas";
@@ -98,8 +110,10 @@
             // 
             // aluguelMenuItem
             // 
+            aluguelMenuItem.BackColor = Color.LightCyan;
+            aluguelMenuItem.Image = Properties.Resources.balloon;
             aluguelMenuItem.Name = "aluguelMenuItem";
-            aluguelMenuItem.Size = new Size(180, 22);
+            aluguelMenuItem.Size = new Size(115, 22);
             aluguelMenuItem.Text = "Aluguel";
             aluguelMenuItem.Click += aluguelMenuItem_Click;
             // 
@@ -169,7 +183,7 @@
             btnPagamento.Padding = new Padding(7);
             btnPagamento.Size = new Size(50, 50);
             btnPagamento.Text = "toolStripButton4";
-            btnPagamento.Click += btnPagamento_Click;
+            btnPagamento.Click += btnPagamento_Click_1;
             // 
             // toolStripSeparator2
             // 
@@ -178,8 +192,9 @@
             // 
             // labelTipoCadastro
             // 
+            labelTipoCadastro.Font = new Font("Microsoft YaHei", 9F, FontStyle.Regular, GraphicsUnit.Point);
             labelTipoCadastro.Name = "labelTipoCadastro";
-            labelTipoCadastro.Size = new Size(75, 50);
+            labelTipoCadastro.Size = new Size(84, 50);
             labelTipoCadastro.Text = "tipoCadastro";
             // 
             // panelRegistros
@@ -217,7 +232,8 @@
             Controls.Add(menuBar);
             MainMenuStrip = menuBar;
             Name = "TelaPrincipalForm";
-            Text = "Form1";
+            ShowIcon = false;
+            Text = "Gerenciador de Festas";
             menuBar.ResumeLayout(false);
             menuBar.PerformLayout();
             toolBar.ResumeLayout(false);
@@ -241,12 +257,12 @@
         private ToolStripButton btnEditar;
         private ToolStripButton btnExcluir;
         private ToolStripSeparator toolStripSeparator1;
-        private ToolStripButton btnPagamento;
         private ToolStripSeparator toolStripSeparator2;
         private ToolStripLabel labelTipoCadastro;
         private Panel panelRegistros;
         private StatusStrip statusStrip1;
         private ToolStripStatusLabel labelRodape;
         private ToolStripMenuItem TemasMenuItem;
+        private ToolStripButton btnPagamento;
     }
 }

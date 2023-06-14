@@ -59,9 +59,9 @@
             label3.AutoSize = true;
             label3.Location = new Point(23, 22);
             label3.Name = "label3";
-            label3.Size = new Size(38, 15);
+            label3.Size = new Size(35, 15);
             label3.TabIndex = 19;
-            label3.Text = "Tema:";
+            label3.Text = "Tema";
             // 
             // txtId
             // 
@@ -76,9 +76,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(394, 22);
             label2.Name = "label2";
-            label2.Size = new Size(20, 15);
+            label2.Size = new Size(17, 15);
             label2.TabIndex = 17;
-            label2.Text = "Id:";
+            label2.Text = "Id";
             // 
             // btnGravar
             // 
@@ -117,9 +117,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(23, 51);
             label1.Name = "label1";
-            label1.Size = new Size(36, 15);
+            label1.Size = new Size(33, 15);
             label1.TabIndex = 22;
-            label1.Text = "Valor:";
+            label1.Text = "Valor";
             // 
             // TelaTemaForm
             // 
@@ -137,7 +137,7 @@
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
             Name = "TelaTemaForm";
-            Text = "TelaTemaForm";
+            Text = "Registro de Tema";
             ResumeLayout(false);
             PerformLayout();
         }

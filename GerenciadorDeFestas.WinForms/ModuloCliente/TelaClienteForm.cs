@@ -41,6 +41,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
         {
             Cliente contato = ObterCliente();
 
+            ValidarErros(contato);
+        }
+
+        private void ValidarErros(Cliente contato)
+        {
             string[] erros = contato.Validar();
 
             if (erros.Length > 0)

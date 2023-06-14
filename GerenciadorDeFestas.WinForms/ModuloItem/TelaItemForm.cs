@@ -1,4 +1,5 @@
 ﻿using GerenciadorDeFestas.Dominio.ModuloItem;
+using GerenciadorDeFestas.WinForms.Compartilhado;
 
 namespace GerenciadorDeFestas.WinForms.ModuloItem
 {
@@ -7,6 +8,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
         public TelaItemForm(List<Item> itens)
         {
             InitializeComponent();
+            this.ConfigurarDialog();
         }
 
         public Item ObterItem()
@@ -41,6 +43,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
         {
             Item item = ObterItem();
 
+            ValidarErros(item);
+        }
+
+        private void ValidarErros(Item item)
+        {
             string[] erros = item.Validar();
 
             if (erros.Length > 0)

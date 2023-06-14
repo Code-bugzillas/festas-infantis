@@ -1,5 +1,6 @@
 ﻿using GerenciadorDeFestas.Dominio.ModuloItem;
 using GerenciadorDeFestas.Dominio.ModuloTema;
+using GerenciadorDeFestas.WinForms.Compartilhado;
 
 namespace GerenciadorDeFestas.WinForms.ModuloTema
 {
@@ -8,6 +9,8 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
         public TelaTemaForm(List<Item> itens)
         {
             InitializeComponent();
+
+            this.ConfigurarDialog();
 
             CarregarItens(itens);
         }
@@ -68,6 +71,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
         {
             Tema tema = ObterTema();
 
+            ValidarErros(tema);
+        }
+
+        private void ValidarErros(Tema tema)
+        {
             string[] erros = tema.Validar();
 
             if (erros.Length > 0)

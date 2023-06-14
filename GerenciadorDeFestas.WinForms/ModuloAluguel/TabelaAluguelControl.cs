@@ -23,7 +23,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
             foreach (Aluguel aluguel in alugueis)
             {
                 grid.Rows.Add(aluguel.id, aluguel.cliente, aluguel.tema, aluguel.data, aluguel.cep, aluguel.dataFechamento == new DateTime() ? "Em Aberto" :
-                        aluguel.dataFechamento.ToString("dd/MM/yyyy"), aluguel.porcentagemPaga, aluguel.valorAhPagar);
+                        aluguel.dataFechamento.ToString("dd/MM/yyyy"), aluguel.porcentagemPaga + "%", aluguel.valorAhPagar);
             }
             TelaPrincipalForm.Instancia.AtualizarRodape($"Visualizando {alugueis.Count} alugueis");
         }

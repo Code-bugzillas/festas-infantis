@@ -50,11 +50,11 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(291, 15);
+            label2.Location = new Point(294, 15);
             label2.Name = "label2";
-            label2.Size = new Size(20, 15);
+            label2.Size = new Size(17, 15);
             label2.TabIndex = 9;
-            label2.Text = "Id:";
+            label2.Text = "Id";
             // 
             // btnGravar
             // 
@@ -94,9 +94,9 @@
             label3.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label3.Location = new Point(12, 15);
             label3.Name = "label3";
-            label3.Size = new Size(87, 15);
+            label3.Size = new Size(84, 15);
             label3.TabIndex = 11;
-            label3.Text = "Nome do Item:";
+            label3.Text = "Nome do Item";
             // 
             // txtValor
             // 
@@ -111,9 +111,9 @@
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label1.Location = new Point(63, 49);
             label1.Name = "label1";
-            label1.Size = new Size(36, 15);
+            label1.Size = new Size(33, 15);
             label1.TabIndex = 14;
-            label1.Text = "Valor:";
+            label1.Text = "Valor";
             // 
             // TelaItemForm
             // 
@@ -130,7 +130,7 @@
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
             Name = "TelaItemForm";
-            Text = "TelaItemForm";
+            Text = "Registro de Item";
             ResumeLayout(false);
             PerformLayout();
         }
