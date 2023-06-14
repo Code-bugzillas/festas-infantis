@@ -105,6 +105,12 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
             Aluguel aluguelSelecionado = ObterAluguelSelecionado();
 
+            if (aluguelSelecionado.pagamentoFinalizado)
+            {
+                MessageBox.Show("Este pagamento já está fechado!", "Pagamentos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             telaPagamento.ConfigurarTela(aluguelSelecionado);
 
             DialogResult opcaoEscolhida = telaPagamento.ShowDialog();

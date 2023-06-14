@@ -5,8 +5,6 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 {
     public partial class TelaPagamentoForm : Form
     {
-        public bool cemPorcento;
-
         public TelaPagamentoForm()
         {
             InitializeComponent();

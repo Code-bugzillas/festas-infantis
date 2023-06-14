@@ -16,6 +16,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
         public string cep;
         public string numero;
         public string rua;
+        public bool pagamentoFinalizado;
 
         public DateTime dataFechamento;
         public decimal porcentagemPaga;
@@ -99,6 +100,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
             if(porcentagemPaga == 100)
             {
                 dataFechamento = DateTime.Now.Date;
+                pagamentoFinalizado = true;
             }
         }
     }
