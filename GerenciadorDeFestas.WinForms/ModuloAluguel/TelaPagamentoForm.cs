@@ -9,6 +9,20 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
             InitializeComponent();
         }
 
+        public void ConfigurarTela(Aluguel aluguelSelecionado)
+        {
+            decimal porcentagemPaga = aluguelSelecionado.porcentagemPaga;
+
+            if (porcentagemPaga == 40)
+                rdbQuarenta.Checked = true;
+
+            else if (porcentagemPaga == 50)
+                rdbCinquenta.Checked = true;
+
+            else if (porcentagemPaga == 100)
+                rdbCem.Checked = true;
+        }
+
         public decimal PorcentagemPaga(Aluguel aluguelSelecionado)
         {
             if (rdbQuarenta.Checked)

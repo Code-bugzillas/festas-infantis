@@ -13,5 +13,12 @@ namespace GerenciadorDeFestas.Infra.Dados.Arquivo.ModuloAluguel
         {
             return contextoDados.alugueis;
         }
+
+        public void AtualizarPagamentoJson(int id, Aluguel aluguelSelecionado)
+        {
+            aluguelSelecionado.AtualizarPagamento(SelecionarPorId(id));
+
+            contextoDados.GravarEmArquivoJson();
+        }
     }
 }

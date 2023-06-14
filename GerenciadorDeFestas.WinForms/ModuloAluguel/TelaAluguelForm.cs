@@ -31,6 +31,8 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
             Aluguel aluguel = new Aluguel(cliente, tema, data, horaInicio, horaFinal, Cep, numero, nomeRua);
 
             aluguel.id = id;
+            aluguel.valorAhPagar = tema.resultado;
+            aluguel.valorAhPagar = aluguel.CalcularValorAhPagar();
 
             return aluguel;
         }

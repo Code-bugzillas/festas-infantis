@@ -10,7 +10,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloTema
         public string nome;
         public decimal valor;
         public List<Item> itens;
-        public decimal Resultado;
+        public decimal resultado;
 
         public Tema()
         {
@@ -33,9 +33,9 @@ namespace GerenciadorDeFestas.Dominio.ModuloTema
                 valorTotal += item.valor;
             }
 
-            Resultado = valor + valorTotal;
+            resultado = valor + valorTotal;
 
-            return Resultado;
+            return resultado;
         }
 
         public override void AtualizarInformacoes(Tema registroAtualizado)
@@ -59,6 +59,11 @@ namespace GerenciadorDeFestas.Dominio.ModuloTema
                 erros.Add("É necessário incluir um Item.");
 
             return erros.ToArray();
+        }
+
+        public override string ToString()
+        {
+            return nome;
         }
     }
 }

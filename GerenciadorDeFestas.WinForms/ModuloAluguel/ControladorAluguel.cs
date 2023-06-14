@@ -105,13 +105,17 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
             Aluguel aluguelSelecionado = ObterAluguelSelecionado();
 
+            telaPagamento.ConfigurarTela(aluguelSelecionado);
+
             DialogResult opcaoEscolhida = telaPagamento.ShowDialog();
 
             if (opcaoEscolhida == DialogResult.OK)
             {
                 telaPagamento.PorcentagemPaga(aluguelSelecionado);
 
-                aluguelSelecionado.ValorAhPagar = aluguelSelecionado.CalcularValorAhPagar();
+                aluguelSelecionado.valorAhPagar = aluguelSelecionado.CalcularValorAhPagar();
+
+                repositorioAluguel.AtualizarPagamentoJson(aluguelSelecionado.id, aluguelSelecionado);
 
                 CarregarAlugueis();
             }

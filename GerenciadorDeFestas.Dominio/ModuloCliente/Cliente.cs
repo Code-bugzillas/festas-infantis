@@ -41,7 +41,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloCliente
 
         public override string ToString()
         {
-            return "Id: " + id + ", " + nome + ", Telefone: " + telefone;
+            return nome;
         }
 
         public override string[] Validar()
@@ -63,7 +63,6 @@ namespace GerenciadorDeFestas.Dominio.ModuloCliente
                    id == cliente.id &&
                    nome == cliente.nome &&
                    telefone == cliente.telefone;
-                  
         }
     }
 }

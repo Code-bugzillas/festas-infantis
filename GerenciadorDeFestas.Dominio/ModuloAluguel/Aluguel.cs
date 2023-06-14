@@ -4,6 +4,7 @@ using GerenciadorDeFestas.Dominio.ModuloTema;
 
 namespace GerenciadorDeFestas.Dominio.ModuloAluguel
 {
+    [Serializable]
     public class Aluguel : EntidadeBase<Aluguel>
     {
 
@@ -18,7 +19,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
 
         public DateTime dataFechamento;
         public decimal porcentagemPaga;
-        public decimal ValorAhPagar;
+        public decimal valorAhPagar;
 
         public Aluguel(Cliente cliente, Tema tema, DateTime data, DateTime horaInicio, DateTime horaFinal, string cep, string numero, string rua)
         {
@@ -48,6 +49,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
             this.rua = registroAtualizado.rua;
             this.cep = registroAtualizado.cep;
             this.numero = registroAtualizado.numero;
+            this.valorAhPagar = registroAtualizado.valorAhPagar;
         }
 
         public override string[] Validar()
@@ -70,9 +72,9 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
         {
             if (cliente.clienteAntigo)
             {
-                return tema.Resultado - (tema.Resultado * 10/100);
+                return tema.resultado - (tema.resultado * 10/100);
             }
-            return tema.Resultado;
+            return tema.resultado;
         }
 
         public decimal CalcularValorAhPagar()
@@ -82,6 +84,19 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
             valorAhPagar = valorAhPagar - (valorAhPagar * (porcentagemPaga / 100));
 
             return valorAhPagar;
+        }
+
+        public void AtualizarPagamento(Aluguel aluguelAtualizado)
+        {
+            this.porcentagemPaga = aluguelAtualizado.porcentagemPaga;
+        }
+
+        public void FinalizarPagamento()
+        {
+            if(porcentagemPaga == 100)
+            {
+                dataFechamento = DateTime.Now.Date;
+            }
         }
     }
 }

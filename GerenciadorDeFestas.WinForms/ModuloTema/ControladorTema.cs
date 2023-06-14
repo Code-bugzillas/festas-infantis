@@ -97,7 +97,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
 
                 decimal valor = tema.CalcularValor();
 
-                tema.Resultado = valor;
+                tema.resultado = valor;
 
                 repositorioTema.Inserir(tema);
 

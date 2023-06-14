@@ -22,11 +22,10 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
             foreach (Aluguel aluguel in alugueis)
             {
-                grid.Rows.Add(aluguel.id, aluguel.cliente, aluguel.tema, aluguel.data, aluguel.cep, aluguel.dataFechamento, aluguel.porcentagemPaga, aluguel.ValorAhPagar);
+                grid.Rows.Add(aluguel.id, aluguel.cliente, aluguel.tema, aluguel.data, aluguel.cep, aluguel.dataFechamento.ToString("dd/MM"), aluguel.porcentagemPaga, aluguel.valorAhPagar);
             }
             TelaPrincipalForm.Instancia.AtualizarRodape($"Visualizando {alugueis.Count} alugueis");
         }
-
 
         private void ConfigurarColunas()
         {
