@@ -18,9 +18,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
             int id = Convert.ToInt32(txtId.Text);
             string nome = txtNome.Text;
             string telefone = txtTelefone.Text;
-            bool tipoCliente = rdbAntigo.Checked;
+            bool clienteAntigo = rdbAntigo.Checked;
+            bool clienteNovo = rdbNovo.Checked;
 
-            cliente = new Cliente(nome, telefone, tipoCliente);
+
+            cliente = new Cliente(nome, telefone, clienteAntigo, clienteNovo);
             cliente.id = id;
 
             return cliente;
