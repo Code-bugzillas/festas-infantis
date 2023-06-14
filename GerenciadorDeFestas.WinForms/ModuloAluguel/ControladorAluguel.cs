@@ -107,7 +107,8 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
             if (aluguelSelecionado.pagamentoFinalizado)
             {
-                MessageBox.Show("Este pagamento já está fechado!", "Pagamentos", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Este pagamento já está fechado!", "Pagamentos",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
