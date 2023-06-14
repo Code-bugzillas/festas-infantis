@@ -32,7 +32,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
             aluguel.id = id;
             aluguel.valorAhPagar = tema.resultado;
-            aluguel.valorAhPagar = aluguel.CalcularValorAhPagar();
+            aluguel.valorAhPagar = aluguel.CalcularValorAPagar();
 
             return aluguel;
         }

@@ -17,6 +17,8 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
             this.repositorioTema = repositorioTema;
         }
 
+
+        #region
         public override string ToolTipInserir => "Inserir tema";
 
         public override string ToolTipEditar => "Editar tema";
@@ -24,6 +26,28 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
         public override string ToolTipExcluir => "Excluir tema";
 
         public override bool PagamentoHabilitado => false;
+        public override bool VisualizarHabilitado => false;
+        #endregion
+
+        public override void Inserir()
+        {
+            TelaTemaForm telaTemaForm = new TelaTemaForm(repositorioItem.SelecionarTodos());
+
+            DialogResult opcaoEscolhida = telaTemaForm.ShowDialog();
+
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+                Tema tema = telaTemaForm.ObterTema();
+
+                decimal valor = tema.CalcularValor();
+
+                tema.resultado = valor;
+
+                repositorioTema.Inserir(tema);
+
+                CarregarTemas();
+            }
+        }
 
         public override void Editar()
         {
@@ -53,13 +77,6 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
             }
         }
 
-        private Tema ObterTemaSelecionado()
-        {
-            int id = tabelaTemaControl.ObterTemaSelecionado();
-
-            return repositorioTema.SelecionarPorId(id);
-        }
-
         public override void Excluir()
         {
             Tema tema = ObterTemaSelecionado();
@@ -85,24 +102,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
             }
         }
 
-        public override void Inserir()
+        private Tema ObterTemaSelecionado()
         {
-            TelaTemaForm telaTemaForm = new TelaTemaForm(repositorioItem.SelecionarTodos());
+            int id = tabelaTemaControl.ObterTemaSelecionado();
 
-            DialogResult opcaoEscolhida = telaTemaForm.ShowDialog();
-
-            if(opcaoEscolhida == DialogResult.OK)
-            {
-                Tema tema = telaTemaForm.ObterTema();
-
-                decimal valor = tema.CalcularValor();
-
-                tema.resultado = valor;
-
-                repositorioTema.Inserir(tema);
-
-                CarregarTemas();
-            }
+            return repositorioTema.SelecionarPorId(id);
         }
 
         private void CarregarTemas()

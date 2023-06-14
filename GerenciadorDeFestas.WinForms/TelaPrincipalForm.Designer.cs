@@ -41,6 +41,7 @@
             btnExcluir = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
             btnPagamento = new ToolStripButton();
+            btnVisualizar = new ToolStripButton();
             toolStripSeparator2 = new ToolStripSeparator();
             labelTipoCadastro = new ToolStripLabel();
             panelRegistros = new Panel();
@@ -120,7 +121,7 @@
             // toolBar
             // 
             toolBar.BackColor = Color.PowderBlue;
-            toolBar.Items.AddRange(new ToolStripItem[] { btnInserir, btnEditar, btnExcluir, toolStripSeparator1, btnPagamento, toolStripSeparator2, labelTipoCadastro });
+            toolBar.Items.AddRange(new ToolStripItem[] { btnInserir, btnEditar, btnExcluir, toolStripSeparator1, btnPagamento, btnVisualizar, toolStripSeparator2, labelTipoCadastro });
             toolBar.Location = new Point(0, 24);
             toolBar.Name = "toolBar";
             toolBar.RenderMode = ToolStripRenderMode.System;
@@ -184,6 +185,19 @@
             btnPagamento.Size = new Size(50, 50);
             btnPagamento.Text = "toolStripButton4";
             btnPagamento.Click += btnPagamento_Click_1;
+            // 
+            // btnVisualizar
+            // 
+            btnVisualizar.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            btnVisualizar.Enabled = false;
+            btnVisualizar.Image = Properties.Resources._11_104884;
+            btnVisualizar.ImageScaling = ToolStripItemImageScaling.None;
+            btnVisualizar.ImageTransparentColor = Color.Magenta;
+            btnVisualizar.Name = "btnVisualizar";
+            btnVisualizar.Padding = new Padding(7);
+            btnVisualizar.Size = new Size(50, 50);
+            btnVisualizar.Text = "toolStripButton1";
+            btnVisualizar.Click += btnVisualizar_Click;
             // 
             // toolStripSeparator2
             // 
@@ -264,5 +278,6 @@
         private ToolStripStatusLabel labelRodape;
         private ToolStripMenuItem TemasMenuItem;
         private ToolStripButton btnPagamento;
+        private ToolStripButton btnVisualizar;
     }
 }

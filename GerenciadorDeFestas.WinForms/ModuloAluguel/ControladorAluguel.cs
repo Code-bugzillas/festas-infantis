@@ -21,6 +21,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
             this.repositorioTema = repositorioTema;
         }
 
+        #region
         public override string ToolTipInserir { get { return "Inserir novo Aluguel"; } }
 
         public override string ToolTipEditar { get { return "Editar Aluguel existente"; } }
@@ -28,6 +29,9 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
         public override string ToolTipExcluir { get { return "Excluir Aluguel existente"; } }
 
         public override string ToolTipPagamento { get { return "Gerenciar pagamento"; } }
+
+        public override string ToolTipVisualizar { get { return "Visualizar detalhes do Aluguel"; } }
+        #endregion
 
         public override void Inserir()
         {
@@ -120,7 +124,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
             {
                 telaPagamento.PorcentagemPaga(aluguelSelecionado);
 
-                aluguelSelecionado.valorAhPagar = aluguelSelecionado.CalcularValorAhPagar();
+                aluguelSelecionado.valorAhPagar = aluguelSelecionado.CalcularValorAPagar();
 
                 repositorioAluguel.AtualizarPagamentoJson(aluguelSelecionado.id, aluguelSelecionado);
 
@@ -157,6 +161,25 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
         public override string ObterTipoCadastro()
         {
             return "Cadastro de Aluguel";
+        }
+
+        public override void Visualizar()
+        {
+            Aluguel aluguel = ObterAluguelSelecionado();
+
+            if (aluguel == null)
+            {
+                MessageBox.Show("Selecione um aluguel!");
+                return;
+            }
+
+            List<Aluguel> lista = repositorioAluguel.SelecionarTodos();
+
+            TelaVisualizarForm tela = new TelaVisualizarForm(aluguel);
+
+            tela.CarregarLabel(aluguel);
+
+            tela.ShowDialog();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloCliente
             this.clienteAntigo = clienteAntigo;
             this.clienteNovo = clienteNovo;
         }
+
         public Cliente()
         {
 

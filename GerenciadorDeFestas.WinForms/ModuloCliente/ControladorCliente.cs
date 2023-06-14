@@ -16,6 +16,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
             this.repositorioCliente = repositorioCliente;
         }
 
+        #region
         public override string ToolTipInserir { get { return "Inserir novo Cliente"; } }
 
         public override string ToolTipEditar { get { return "Editar Cliente existente"; } }
@@ -23,6 +24,8 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
         public override string ToolTipExcluir { get { return "Excluir Cliente existente"; } }
 
         public override bool PagamentoHabilitado => false;
+        public override bool VisualizarHabilitado => false;
+        #endregion
 
         public override void Inserir()
         {

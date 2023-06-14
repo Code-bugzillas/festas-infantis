@@ -12,16 +12,16 @@ namespace GerenciadorDeFestas.Dominio.ModuloTema
         public List<Item> itens;
         public decimal resultado;
 
-        public Tema()
-        {
-            
-        }
-
         public Tema(string nome, int valor)
         {
             this.nome = nome;
             this.valor = valor;
             this.itens = new List<Item>();
+        }
+
+        public Tema()
+        {
+
         }
 
         public decimal CalcularValor()

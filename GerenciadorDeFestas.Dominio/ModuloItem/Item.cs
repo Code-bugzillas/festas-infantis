@@ -8,15 +8,15 @@ namespace GerenciadorDeFestas.Dominio.ModuloItem
         public string nome;
         public int valor;
 
-        public Item()
-        {
-            
-        }
-
         public Item(string nome, int valor)
         {
             this.nome = nome;
             this.valor = valor;
+        }
+
+        public Item()
+        {
+
         }
 
         public override void AtualizarInformacoes(Item registroAtualizado)

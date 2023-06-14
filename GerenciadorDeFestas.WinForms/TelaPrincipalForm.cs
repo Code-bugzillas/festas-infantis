@@ -77,6 +77,7 @@ namespace GerenciadorDeFestas.WinForms
             btnEditar.Enabled = controlador.EditarHabilitado;
             btnExcluir.Enabled = controlador.ExcluirHabilitado;
             btnPagamento.Enabled = controlador.PagamentoHabilitado;
+            btnVisualizar.Enabled = controlador.VisualizarHabilitado;
         }
 
         private void ConfigurarToolTips(ControladorBase controlador)
@@ -85,6 +86,7 @@ namespace GerenciadorDeFestas.WinForms
             btnEditar.ToolTipText = controlador.ToolTipEditar;
             btnExcluir.ToolTipText = controlador.ToolTipExcluir;
             btnPagamento.ToolTipText = controlador.ToolTipPagamento;
+            btnVisualizar.ToolTipText = controlador.ToolTipVisualizar;
         }
 
         private void ConfigurarBarraFerramentas(ControladorBase controlador)
@@ -142,6 +144,11 @@ namespace GerenciadorDeFestas.WinForms
         private void btnPagamento_Click_1(object sender, EventArgs e)
         {
             controlador.Pagamento();
+        }
+
+        private void btnVisualizar_Click(object sender, EventArgs e)
+        {
+            controlador.Visualizar();
         }
     }
 }

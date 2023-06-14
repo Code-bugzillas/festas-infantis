@@ -11,6 +11,8 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
         {
             InitializeComponent();
 
+            this.ConfigurarDialog();
+
         }
 
         public Cliente ObterCliente()

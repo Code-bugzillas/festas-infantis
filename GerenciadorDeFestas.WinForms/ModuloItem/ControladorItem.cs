@@ -16,6 +16,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
             this.repositorioItem = repositorioItem;
         }
 
+        #region
         public override string ToolTipInserir => "Inserir Item";
 
         public override string ToolTipEditar => "Editar Item";
@@ -23,6 +24,24 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
         public override string ToolTipExcluir => "Excluir Item";
 
         public override bool PagamentoHabilitado => false;
+        public override bool VisualizarHabilitado => false;
+        #endregion
+
+        public override void Inserir()
+        {
+            TelaItemForm telaItemForm = new TelaItemForm(repositorioItem.SelecionarTodos());
+
+            DialogResult opcaoEscolhida = telaItemForm.ShowDialog();
+
+            if (opcaoEscolhida == DialogResult.OK)
+            {
+                Item item = telaItemForm.ObterItem();
+
+                repositorioItem.Inserir(item);
+            }
+
+            CarregarItens();
+        }
 
         public override void Editar()
         {
@@ -52,13 +71,6 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
             }
         }
 
-        private Item ObterItemSelecionado()
-        {
-            int id = tabelaItemControl.ObterIdSelecionado();
-
-            return repositorioItem.SelecionarPorId(id);
-        }
-
         public override void Excluir()
         {
             Item item = ObterItemSelecionado();
@@ -84,20 +96,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
             }
         }
 
-        public override void Inserir()
+        private Item ObterItemSelecionado()
         {
-            TelaItemForm telaItemForm = new TelaItemForm(repositorioItem.SelecionarTodos());
+            int id = tabelaItemControl.ObterIdSelecionado();
 
-            DialogResult opcaoEscolhida = telaItemForm.ShowDialog();
-
-            if(opcaoEscolhida == DialogResult.OK)
-            {
-                Item item = telaItemForm.ObterItem();
-
-                repositorioItem.Inserir(item);
-            }
-
-            CarregarItens();
+            return repositorioItem.SelecionarPorId(id);
         }
 
         private void CarregarItens()

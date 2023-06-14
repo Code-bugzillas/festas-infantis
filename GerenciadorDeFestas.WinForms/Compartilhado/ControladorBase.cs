@@ -1,6 +1,4 @@
-﻿using GerenciadorDeFestas.WinForms.ModuloTema;
-
-namespace GerenciadorDeFestas.WinForms.Compartilhado
+﻿namespace GerenciadorDeFestas.WinForms.Compartilhado
 {
     public abstract class ControladorBase
     {
@@ -12,6 +10,8 @@ namespace GerenciadorDeFestas.WinForms.Compartilhado
 
         public virtual string ToolTipPagamento { get; }
 
+        public virtual string ToolTipVisualizar { get; }    
+
         public virtual bool InserirHabilitado { get { return true; } }
 
         public virtual bool EditarHabilitado { get { return true; } }
@@ -20,6 +20,8 @@ namespace GerenciadorDeFestas.WinForms.Compartilhado
 
         public virtual bool PagamentoHabilitado { get { return true; } }
 
+        public virtual bool VisualizarHabilitado { get { return true; } }
+
         public abstract void Inserir();
 
         public abstract void Editar();
@@ -27,6 +29,11 @@ namespace GerenciadorDeFestas.WinForms.Compartilhado
         public abstract void Excluir();
 
         public virtual void Pagamento()
+        {
+
+        }
+
+        public virtual void Visualizar()
         {
 
         }

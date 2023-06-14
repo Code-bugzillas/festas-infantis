@@ -63,6 +63,16 @@ namespace GerenciadorDeFestas.WinForms.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _11_104884 {
+            get {
+                object obj = ResourceManager.GetObject("11_104884", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1486564407_plus_green_81521 {
             get {
                 object obj = ResourceManager.GetObject("1486564407-plus-green_81521", resourceCulture);

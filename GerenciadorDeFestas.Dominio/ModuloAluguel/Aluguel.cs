@@ -81,7 +81,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
             return tema.resultado;
         }
 
-        public decimal CalcularValorAhPagar()
+        public decimal CalcularValorAPagar()
         {
             decimal valorAhPagar = CalcularDesconto();
 
@@ -102,6 +102,17 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
                 dataFechamento = DateTime.Now.Date;
                 pagamentoFinalizado = true;
             }
+        }
+
+        public override string ToString()
+        {
+            return $"Tema: {tema.nome}\n" +
+                   $"Data: {data.ToString("dd/MM/yyyy")}\n" +
+                   $"Hora Inicio: {horaInicio.ToString("HH:mm")}\n" +
+                   $"Hora Final: {horaFinal.ToString("HH:mm")}\n" +
+                   $"CEP: {cep}\n" +
+                   $"Rua: {rua}\n" +
+                   $"Numero: {numero}";
         }
     }
 }
