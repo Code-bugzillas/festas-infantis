@@ -37,6 +37,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
             else
                 rdbNovo.Checked = true;
         }
+
         private void btnGravar_Click_1(object sender, EventArgs e)
         {
             Cliente contato = ObterCliente();
@@ -55,5 +56,6 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
                 DialogResult = DialogResult.None;
             }
         }
+
     }
 }

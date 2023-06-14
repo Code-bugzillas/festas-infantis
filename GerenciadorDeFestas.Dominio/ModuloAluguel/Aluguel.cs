@@ -65,6 +65,9 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
             if (string.IsNullOrEmpty(numero))
                 erros.Add("O campo 'Numero' é obrigatório");
 
+            if (horaInicio > horaFinal)
+                erros.Add("A hora inicial não pode ser maior que a data final");
+
             return erros.ToArray();
         }
 
