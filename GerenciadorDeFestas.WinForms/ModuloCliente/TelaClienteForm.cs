@@ -44,14 +44,14 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
 
         private void btnGravar_Click_1(object sender, EventArgs e)
         {
-            Cliente contato = ObterCliente();
+            Cliente cliente = ObterCliente();
 
-            ValidarErros(contato);
+            ValidarErros(cliente);
         }
 
-        private void ValidarErros(Cliente contato)
+        private void ValidarErros(Cliente cliente)
         {
-            string[] erros = contato.Validar();
+            string[] erros = cliente.Validar();
 
             if (erros.Length > 0)
             {
