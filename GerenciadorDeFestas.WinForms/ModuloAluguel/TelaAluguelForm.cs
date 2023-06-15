@@ -32,25 +32,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
             aluguel.id = id;
 
-            if(tema == null)
+            if (tema != null)
             {
-                MessageBox.Show("É necessário selecionar um tema!");
-                DialogResult = DialogResult.None;
-                return null;
+                aluguel.valorAhPagar = tema.resultado;
+                aluguel.valorAhPagar = aluguel.CalcularValorAPagar();
             }
-                
-            
-            if(cliente == null)
-            {
-                MessageBox.Show("É necessário selecionar um cliente!");
-                DialogResult = DialogResult.None;
-                return null;
-            }
-                
-            
-
-            aluguel.valorAhPagar = tema.resultado;
-            aluguel.valorAhPagar = aluguel.CalcularValorAPagar();
 
             return aluguel;
         }
