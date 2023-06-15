@@ -31,6 +31,24 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
             Aluguel aluguel = new Aluguel(cliente, tema, data, horaInicio, horaFinal, Cep, numero, nomeRua);
 
             aluguel.id = id;
+
+            if(tema == null)
+            {
+                MessageBox.Show("É necessário selecionar um tema!");
+                DialogResult = DialogResult.None;
+                return null;
+            }
+                
+            
+            if(cliente == null)
+            {
+                MessageBox.Show("É necessário selecionar um cliente!");
+                DialogResult = DialogResult.None;
+                return null;
+            }
+                
+            
+
             aluguel.valorAhPagar = tema.resultado;
             aluguel.valorAhPagar = aluguel.CalcularValorAPagar();
 
@@ -75,6 +93,8 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
         private void ValidarErros(Aluguel aluguel)
         {
+            if(aluguel == null) return;
+
             string[] erros = aluguel.Validar();
 
             if (erros.Length > 0)

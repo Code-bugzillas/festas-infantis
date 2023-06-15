@@ -43,6 +43,12 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
             {
                 Aluguel aluguel = telaAluguel.ObterAluguel();
 
+                if (aluguel == null)
+                {
+                    return;
+                }
+                    
+
                 repositorioAluguel.Inserir(aluguel);
 
                 CarregarAlugueis();
