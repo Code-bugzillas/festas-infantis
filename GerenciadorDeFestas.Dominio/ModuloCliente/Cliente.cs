@@ -49,6 +49,9 @@ namespace GerenciadorDeFestas.Dominio.ModuloCliente
             if (clienteAntigo == false && clienteNovo == false)
                 erros.Add("O campo cliente é obrigatório");
 
+            if (nome.Length <= 2)
+                erros.Add("O campo nome deve ter mais de 2 caracteres");
+
             return erros.ToArray();
         }
 
