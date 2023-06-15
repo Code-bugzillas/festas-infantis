@@ -1,5 +1,7 @@
 ﻿using GerenciadorDeFestas.Dominio.ModuloCliente;
 using GerenciadorDeFestas.Dominio.ModuloItem;
+using GerenciadorDeFestas.Dominio.ModuloTema;
+using GerenciadorDeFestas.Infra.Dados.Arquivo.Compartilhado;
 using GerenciadorDeFestas.Infra.Dados.Arquivo.ModuloItem;
 using GerenciadorDeFestas.WinForms.Compartilhado;
 using GerenciadorDeFestas.WinForms.ModuloCliente;
@@ -10,10 +12,12 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
     {
         private IRepositorioItem repositorioItem;
         private TabelaItemControl tabelaItemControl;
+        private ContextoDados contexto;
 
-        public ControladorItem(IRepositorioItem repositorioItem)
+        public ControladorItem(IRepositorioItem repositorioItem, ContextoDados contexto)
         {
             this.repositorioItem = repositorioItem;
+            this.contexto = contexto;
         }
 
         #region
@@ -29,7 +33,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
 
         public override void Inserir()
         {
-            TelaItemForm telaItemForm = new TelaItemForm(repositorioItem.SelecionarTodos());
+            TelaItemForm telaItemForm = new TelaItemForm(repositorioItem.SelecionarTodos(), contexto);
 
             DialogResult opcaoEscolhida = telaItemForm.ShowDialog();
 
@@ -56,7 +60,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
                 return;
             }
 
-            TelaItemForm telaItem = new TelaItemForm(repositorioItem.SelecionarTodos());
+            TelaItemForm telaItem = new TelaItemForm(repositorioItem.SelecionarTodos(), contexto);
             telaItem.ConfigurarTela(itemSelecionado);
 
             DialogResult opcaoEscolhida = telaItem.ShowDialog();
@@ -83,6 +87,18 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
                     MessageBoxIcon.Exclamation);
 
                 return;
+            }
+
+            foreach(Tema t in contexto.temas)
+            {
+                if (t.itens.Contains(item))
+                {
+                    MessageBox.Show($"O item não pode ser excluído pois está em uso",
+                    "Exclusão de Itens",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                    return;
+                }
             }
 
             DialogResult opcaoEscolhida = MessageBox.Show($"Deseja excluir o item {item.nome}?", "Exclusão de Itens",

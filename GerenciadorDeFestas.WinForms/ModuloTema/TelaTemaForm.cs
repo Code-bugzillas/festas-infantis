@@ -1,13 +1,18 @@
 ﻿using GerenciadorDeFestas.Dominio.ModuloItem;
 using GerenciadorDeFestas.Dominio.ModuloTema;
+using GerenciadorDeFestas.Infra.Dados.Arquivo.Compartilhado;
 using GerenciadorDeFestas.WinForms.Compartilhado;
 
 namespace GerenciadorDeFestas.WinForms.ModuloTema
 {
     public partial class TelaTemaForm : Form
     {
-        public TelaTemaForm(List<Item> itens)
+        private ContextoDados contextoTema;
+
+        public TelaTemaForm(List<Item> itens, ContextoDados contextoTema)
         {
+            this.contextoTema = contextoTema;
+
             InitializeComponent();
 
             this.ConfigurarDialog();
@@ -43,6 +48,8 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
             txtId.Text = temaSelecionado.id.ToString();
             txtTema.Text = temaSelecionado.nome;
             txtValor.Text = temaSelecionado.valor.ToString();
+
+            txtValor.ReadOnly = true;
 
             int i = 0;
 
@@ -84,6 +91,16 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
 
                 DialogResult = DialogResult.None;
             }
+
+            foreach (Tema t in contextoTema.temas)
+            {
+                if (tema.nome == t.nome)
+                {
+                    MessageBox.Show("O nome já está em uso");
+                    DialogResult = DialogResult.None;
+                }
+            }
+
         }
     }
 }

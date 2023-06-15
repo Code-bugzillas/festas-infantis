@@ -35,6 +35,9 @@ namespace GerenciadorDeFestas.Dominio.ModuloItem
             if (valor == -1)
                 erros.Add("O campo valor é obrigatório!");
 
+            if (valor < 0)
+                erros.Add("O campo valor não pode ser menor que zero!");
+
             return erros.ToArray();
         }
 

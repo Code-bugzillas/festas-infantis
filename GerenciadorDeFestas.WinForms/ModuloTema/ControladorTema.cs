@@ -1,5 +1,7 @@
-﻿using GerenciadorDeFestas.Dominio.ModuloItem;
+﻿using GerenciadorDeFestas.Dominio.ModuloAluguel;
+using GerenciadorDeFestas.Dominio.ModuloItem;
 using GerenciadorDeFestas.Dominio.ModuloTema;
+using GerenciadorDeFestas.Infra.Dados.Arquivo.Compartilhado;
 using GerenciadorDeFestas.WinForms.Compartilhado;
 using GerenciadorDeFestas.WinForms.ModuloItem;
 
@@ -7,12 +9,14 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
 {
     public class ControladorTema : ControladorBase
     {
+        private ContextoDados contextoDados;
         private IRepositorioItem repositorioItem;
         private IRepositorioTema repositorioTema;
         private TabelaTemaControl tabelaTemaControl;
 
-        public ControladorTema(IRepositorioItem repositorioItem, IRepositorioTema repositorioTema)
+        public ControladorTema(IRepositorioItem repositorioItem, IRepositorioTema repositorioTema, ContextoDados contextoDados)
         {
+            this.contextoDados = contextoDados;
             this.repositorioItem = repositorioItem;
             this.repositorioTema = repositorioTema;
         }
@@ -31,7 +35,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
 
         public override void Inserir()
         {
-            TelaTemaForm telaTemaForm = new TelaTemaForm(repositorioItem.SelecionarTodos());
+            TelaTemaForm telaTemaForm = new TelaTemaForm(repositorioItem.SelecionarTodos(), contextoDados);
 
             DialogResult opcaoEscolhida = telaTemaForm.ShowDialog();
 
@@ -62,7 +66,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
                 return;
             }
 
-            TelaTemaForm telaTema = new TelaTemaForm(repositorioItem.SelecionarTodos());
+            TelaTemaForm telaTema = new TelaTemaForm(repositorioItem.SelecionarTodos(), contextoDados);
             telaTema.ConfigurarTela(temaSelecionado);
 
             DialogResult opcaoEscolhida = telaTema.ShowDialog();
@@ -89,6 +93,19 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
                     MessageBoxIcon.Exclamation);
 
                 return;
+            }
+
+            foreach(Aluguel a in contextoDados.alugueis)
+            {
+                if(a.tema == tema)
+                {
+                    MessageBox.Show($"O tema não pode ser excluído pois está em uso",
+                    "Exclusão de Temas",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                    return;
+                }
+
             }
 
             DialogResult opcaoEscolhida = MessageBox.Show($"Deseja excluir o tema {tema.nome}?", "Exclusão de Temas",

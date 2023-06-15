@@ -107,14 +107,14 @@ namespace GerenciadorDeFestas.WinForms
 
         private void TemasMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorTema(repositorioItem, repositorioTema);
+            controlador = new ControladorTema(repositorioItem, repositorioTema, contexto);
 
             ConfigurarTelaPrincipal(controlador);
         }
 
         private void ItensMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorItem(repositorioItem);
+            controlador = new ControladorItem(repositorioItem, contexto);
 
             ConfigurarTelaPrincipal(controlador);
         }

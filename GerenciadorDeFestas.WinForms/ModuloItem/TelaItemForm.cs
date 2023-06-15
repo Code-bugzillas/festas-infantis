@@ -1,12 +1,16 @@
 ﻿using GerenciadorDeFestas.Dominio.ModuloItem;
+using GerenciadorDeFestas.Infra.Dados.Arquivo.Compartilhado;
 using GerenciadorDeFestas.WinForms.Compartilhado;
 
 namespace GerenciadorDeFestas.WinForms.ModuloItem
 {
     public partial class TelaItemForm : Form
     {
-        public TelaItemForm(List<Item> itens)
+        private ContextoDados contextoDados;
+
+        public TelaItemForm(List<Item> itens, ContextoDados contextoDados)
         {
+            this.contextoDados = contextoDados;
             InitializeComponent();
             this.ConfigurarDialog();
         }
@@ -55,6 +59,16 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
                 TelaPrincipalForm.Instancia.AtualizarRodape(erros[0]);
 
                 DialogResult = DialogResult.None;
+            }
+
+            foreach(Item t in contextoDados.itens)
+            {
+                if(t.nome == item.nome)
+                {
+                    MessageBox.Show("O nome já está em uso");
+
+                    DialogResult = DialogResult.None;
+                }
             }
         }
     }
