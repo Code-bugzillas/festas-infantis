@@ -1,5 +1,6 @@
 ﻿using GerenciadorDeFestas.Dominio.ModuloAluguel;
 using GerenciadorDeFestas.Dominio.ModuloCliente;
+using GerenciadorDeFestas.Infra.Dados.Arquivo.Compartilhado;
 using GerenciadorDeFestas.WinForms.Compartilhado;
 using GerenciadorDeFestas.WinForms.ModuloAluguel;
 
@@ -9,11 +10,13 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
     {
 
         private IRepositorioCliente repositorioCliente;
+        private ContextoDados contextoDados;
         private TabelaClienteControl tabelaCliente;
 
-        public ControladorCliente(IRepositorioCliente repositorioCliente)
+        public ControladorCliente(IRepositorioCliente repositorioCliente, ContextoDados contextoDados)
         {
             this.repositorioCliente = repositorioCliente;
+            this.contextoDados = contextoDados;
         }
 
         #region
@@ -24,12 +27,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
         public override string ToolTipExcluir { get { return "Excluir Cliente existente"; } }
 
         public override bool PagamentoHabilitado => false;
-        public override bool VisualizarHabilitado => false;
         #endregion
 
         public override void Inserir()
         {
-            TelaClienteForm telaCliente = new TelaClienteForm(repositorioCliente.SelecionarTodos());
+            TelaClienteForm telaCliente = new TelaClienteForm(repositorioCliente.SelecionarTodos(), contextoDados);
 
             DialogResult opcaoEscolhida = telaCliente.ShowDialog();
 
@@ -57,7 +59,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
                 return;
             }
 
-            TelaClienteForm telaCliente = new TelaClienteForm(repositorioCliente.SelecionarTodos());
+            TelaClienteForm telaCliente = new TelaClienteForm(repositorioCliente.SelecionarTodos(), contextoDados);
             telaCliente.ConfigurarTela(clienteSelecionado);
 
             DialogResult opcaoEscolhida = telaCliente.ShowDialog();
@@ -84,6 +86,19 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
                     MessageBoxIcon.Exclamation);
 
                 return;
+            }
+
+            foreach (Aluguel c in contextoDados.alugueis)
+            {
+                if (c.cliente == cliente)
+                {
+                    MessageBox.Show($"O Cliente nao pode ser excluido pois esta em uso!",
+                      "Exclusão de Clientes",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Exclamation);
+
+                    return;
+                }
             }
 
             DialogResult opcaoEscolhida = MessageBox.Show($"Deseja excluir o cliente {cliente.nome}?", "Exclusão de Clientes",
@@ -124,6 +139,19 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
         public override string ObterTipoCadastro()
         {
             return "Cadastro de Clientes";
+        }
+
+        public override void Visualizar()
+        {
+            Cliente cliente = ObterClienteSelecionado();
+
+            foreach(Aluguel c in contextoDados.alugueis)
+            {
+                if (c.cliente == cliente)
+                {
+
+                }
+            }
         }
     }
 }

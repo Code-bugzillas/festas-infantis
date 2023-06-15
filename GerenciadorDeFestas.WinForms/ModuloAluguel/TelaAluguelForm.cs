@@ -79,7 +79,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
         private void ValidarErros(Aluguel aluguel)
         {
-            if(aluguel == null) return;
+            if (aluguel == null) return;
 
             string[] erros = aluguel.Validar();
 

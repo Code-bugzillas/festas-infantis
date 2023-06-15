@@ -38,7 +38,7 @@
             label3 = new Label();
             label4 = new Label();
             txtNome = new TextBox();
-            txtTelefone = new TextBox();
+            txtTelefone = new MaskedTextBox();
             SuspendLayout();
             // 
             // btnCancelar
@@ -110,6 +110,7 @@
             // 
             txtId.Location = new Point(400, 21);
             txtId.Name = "txtId";
+            txtId.ReadOnly = true;
             txtId.Size = new Size(28, 23);
             txtId.TabIndex = 6;
             txtId.Text = "0";
@@ -142,9 +143,10 @@
             // txtTelefone
             // 
             txtTelefone.Location = new Point(79, 56);
+            txtTelefone.Mask = "(99) 0000-0000";
             txtTelefone.Name = "txtTelefone";
-            txtTelefone.Size = new Size(126, 23);
-            txtTelefone.TabIndex = 10;
+            txtTelefone.Size = new Size(100, 23);
+            txtTelefone.TabIndex = 11;
             // 
             // TelaClienteForm
             // 
@@ -181,6 +183,6 @@
         private Label label3;
         private Label label4;
         private TextBox txtNome;
-        private TextBox txtTelefone;
+        private MaskedTextBox txtTelefone;
     }
 }
