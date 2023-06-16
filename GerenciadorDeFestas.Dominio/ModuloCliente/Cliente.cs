@@ -1,5 +1,6 @@
 ﻿using GerenciadorDeFestas.Dominio.Compartilhado;
 using GerenciadorDeFestas.Dominio.ModuloAluguel;
+using System.Text.RegularExpressions;
 
 namespace GerenciadorDeFestas.Dominio.ModuloCliente
 {
@@ -46,8 +47,13 @@ namespace GerenciadorDeFestas.Dominio.ModuloCliente
             if(string.IsNullOrEmpty(nome))
                 erros.Add("O campo  'nome' é obrigatorio");
 
-            if (string.IsNullOrEmpty(telefone))
-                erros.Add("O campo  'telefone' é obrigatorio");
+            string apenasDigitos = Regex.Replace(telefone, "[^0-9]", "");
+
+            if (string.IsNullOrEmpty(apenasDigitos))
+                erros.Add("O campo 'telefone' é obrigatório");
+
+            if (telefone.Length <= 13)
+                erros.Add("O campo 'telefone' é obrigatório");
 
             if (clienteAntigo == false && clienteNovo == false)
                 erros.Add("O campo cliente é obrigatório");
