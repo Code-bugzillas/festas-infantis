@@ -96,6 +96,16 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
                 return;
             }
 
+            if(aluguel.pagamentoFinalizado == false)
+            {
+                MessageBox.Show($"Não é possível excluir um aluguel não finalizado!",
+                    "Exclusão de Alugueis",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+
+                return;
+            }
+
             DialogResult opcaoEscolhida = MessageBox.Show($"Deseja excluir o Aluguel {aluguel.cliente.nome}?", "Exclusão de Alugueis",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
