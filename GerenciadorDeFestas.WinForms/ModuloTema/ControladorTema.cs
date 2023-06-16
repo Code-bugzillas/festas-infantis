@@ -1,9 +1,8 @@
 ﻿using GerenciadorDeFestas.Dominio.ModuloAluguel;
 using GerenciadorDeFestas.Dominio.ModuloItem;
 using GerenciadorDeFestas.Dominio.ModuloTema;
-using GerenciadorDeFestas.Infra.Dados.Arquivo.Compartilhado;
 using GerenciadorDeFestas.WinForms.Compartilhado;
-using GerenciadorDeFestas.WinForms.ModuloItem;
+using GerenciadorDeFestas.WinForms.ModuloAluguel;
 
 namespace GerenciadorDeFestas.WinForms.ModuloTema
 {
@@ -20,14 +19,15 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
         }
 
         #region
-        public override string ToolTipInserir => "Inserir tema";
+        public override string ToolTipInserir { get { return "Inserir Tema"; } }
 
-        public override string ToolTipEditar => "Editar tema";
+        public override string ToolTipEditar { get { return "Editar Tema existente"; } }
 
-        public override string ToolTipExcluir => "Excluir tema";
+        public override string ToolTipExcluir { get { return "Excluir Tema existente"; } }
+
+        public override string ToolTipVisualizar { get { return "Visualizar itens do Tema"; } }
 
         public override bool PagamentoHabilitado => false;
-        public override bool VisualizarHabilitado => false;
         #endregion
 
         public override void Inserir()
@@ -130,6 +130,23 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
         public override string ObterTipoCadastro()
         {
             return "Cadastro de Temas";
+        }
+
+        public override void Visualizar()
+        {
+            //Tema tema = ObterTemaSelecionado();
+
+            //if (tema == null)
+            //{
+            //    MessageBox.Show("Selecione um tema!");
+            //    return;
+            //}
+
+            //TelaVisualizarItensForm tela = new TelaVisualizarItensForm();
+
+            //tela.CarregarLabel(tema);
+
+            //tela.ShowDialog();
         }
     }
 }

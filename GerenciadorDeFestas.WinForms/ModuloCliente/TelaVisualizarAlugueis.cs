@@ -1,14 +1,4 @@
-﻿using GerenciadorDeFestas.Dominio.ModuloAluguel;
-using GerenciadorDeFestas.Dominio.ModuloCliente;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using GerenciadorDeFestas.Dominio.ModuloCliente;
 
 namespace GerenciadorDeFestas.WinForms.ModuloCliente
 {
@@ -18,19 +8,19 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
         {
             InitializeComponent();
 
-            AtualizarLista(cliente);
+            //AtualizarLista(cliente);
         }
 
-        private void AtualizarLista(Cliente clienteSelecionado)
-        {
-            listAluguel.Items.Clear();
+        //private void AtualizarLista(Cliente clienteSelecionado)
+        //{
+        //    listAluguel.Items.Clear();
 
-            foreach(Aluguel aluguel in clienteSelecionado.aluguels)
-            {
-                string[] atributos = aluguel.ToString().Split('\n');
-                listAluguel.Items.AddRange(atributos);
-            }
-        }
+        //    foreach (Aluguel aluguel in clienteSelecionado.aluguels)
+        //    {
+        //        string[] atributos = aluguel.ToString().Split('\n');
+        //        listAluguel.Items.AddRange(atributos);
+        //    }
+        //}
 
         public void CarregarLabel(Cliente cliente)
         {

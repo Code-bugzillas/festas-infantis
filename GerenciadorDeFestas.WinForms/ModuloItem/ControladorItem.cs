@@ -1,10 +1,5 @@
-﻿using GerenciadorDeFestas.Dominio.ModuloCliente;
-using GerenciadorDeFestas.Dominio.ModuloItem;
-using GerenciadorDeFestas.Dominio.ModuloTema;
-using GerenciadorDeFestas.Infra.Dados.Arquivo.Compartilhado;
-using GerenciadorDeFestas.Infra.Dados.Arquivo.ModuloItem;
+﻿using GerenciadorDeFestas.Dominio.ModuloItem;
 using GerenciadorDeFestas.WinForms.Compartilhado;
-using GerenciadorDeFestas.WinForms.ModuloCliente;
 
 namespace GerenciadorDeFestas.WinForms.ModuloItem
 {

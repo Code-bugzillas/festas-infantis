@@ -31,8 +31,8 @@
             btnCancelar = new Button();
             label1 = new Label();
             groupBox1 = new GroupBox();
-            lblFesta = new Label();
             listFestas = new ListBox();
+            lblFesta = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -67,15 +67,6 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Detalhes da Festa";
             // 
-            // lblFesta
-            // 
-            lblFesta.AutoSize = true;
-            lblFesta.Location = new Point(54, 19);
-            lblFesta.Name = "lblFesta";
-            lblFesta.Size = new Size(52, 15);
-            lblFesta.TabIndex = 11;
-            lblFesta.Text = "---------";
-            // 
             // listFestas
             // 
             listFestas.Dock = DockStyle.Fill;
@@ -86,11 +77,20 @@
             listFestas.Size = new Size(312, 259);
             listFestas.TabIndex = 0;
             // 
+            // lblFesta
+            // 
+            lblFesta.AutoSize = true;
+            lblFesta.Location = new Point(54, 19);
+            lblFesta.Name = "lblFesta";
+            lblFesta.Size = new Size(52, 15);
+            lblFesta.TabIndex = 11;
+            lblFesta.Text = "---------";
+            // 
             // TelaVisualizarForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(351, 389);
+            ClientSize = new Size(342, 389);
             Controls.Add(lblFesta);
             Controls.Add(groupBox1);
             Controls.Add(label1);

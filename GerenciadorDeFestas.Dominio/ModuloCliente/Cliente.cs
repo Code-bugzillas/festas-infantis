@@ -11,7 +11,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloCliente
         public string telefone;
         public bool clienteAntigo;
         public bool clienteNovo;
-        public List<Aluguel> aluguels;
+        public List<Aluguel> alugueis;
 
         public Cliente( string nome, string telefone, bool clienteAntigo, bool clienteNovo)
         {
@@ -19,7 +19,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloCliente
             this.telefone = telefone;
             this.clienteAntigo = clienteAntigo;
             this.clienteNovo = clienteNovo;
-            aluguels = new List<Aluguel>();
+            alugueis = new List<Aluguel>();
         }
 
         public Cliente()

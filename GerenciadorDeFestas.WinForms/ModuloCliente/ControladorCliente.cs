@@ -25,6 +25,8 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
 
         public override string ToolTipExcluir { get { return "Excluir Cliente existente"; } }
 
+        public override string ToolTipVisualizar { get { return "Visualizar Alugueis do Cliente"; } }
+
         public override bool PagamentoHabilitado => false;
         #endregion
 
@@ -93,7 +95,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
 
             if (opcaoEscolhida == DialogResult.OK)
             {
-                if(cliente.aluguels.Count > 0)
+                if(cliente.alugueis.Count > 0)
                 {
                     MessageBox.Show("Exclusão inválida, cliente possui aluguéis");
                     return;

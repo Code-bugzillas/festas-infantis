@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             lblFesta = new Label();
-            groupBox1 = new GroupBox();
-            listAluguel = new ListBox();
             label1 = new Label();
             btnCancelar = new Button();
-            groupBox1.SuspendLayout();
+            tabelaAluguelControl1 = new ModuloAluguel.TabelaAluguelControl();
             SuspendLayout();
             // 
             // lblFesta
@@ -44,25 +42,6 @@
             lblFesta.Size = new Size(52, 15);
             lblFesta.TabIndex = 15;
             lblFesta.Text = "---------";
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(listAluguel);
-            groupBox1.Location = new Point(27, 58);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(324, 227);
-            groupBox1.TabIndex = 14;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Detalhes do Aluguel";
-            // 
-            // listAluguel
-            // 
-            listAluguel.FormattingEnabled = true;
-            listAluguel.ItemHeight = 15;
-            listAluguel.Location = new Point(6, 22);
-            listAluguel.Name = "listAluguel";
-            listAluguel.Size = new Size(312, 199);
-            listAluguel.TabIndex = 0;
             // 
             // label1
             // 
@@ -78,25 +57,31 @@
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancelar.BackColor = Color.PowderBlue;
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(27, 291);
+            btnCancelar.Location = new Point(27, 346);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(325, 41);
+            btnCancelar.Size = new Size(578, 41);
             btnCancelar.TabIndex = 12;
             btnCancelar.Text = "OK";
             btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // TelaVisualizarAlugueisClientes
+            // tabelaAluguelControl1
+            // 
+            tabelaAluguelControl1.Location = new Point(27, 58);
+            tabelaAluguelControl1.Name = "tabelaAluguelControl1";
+            tabelaAluguelControl1.Size = new Size(578, 269);
+            tabelaAluguelControl1.TabIndex = 16;
+            // 
+            // TelaVisualizarAlugueis
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(388, 361);
+            ClientSize = new Size(617, 416);
+            Controls.Add(tabelaAluguelControl1);
             Controls.Add(lblFesta);
-            Controls.Add(groupBox1);
             Controls.Add(label1);
             Controls.Add(btnCancelar);
-            Name = "TelaVisualizarAlugueisClientes";
+            Name = "TelaVisualizarAlugueis";
             Text = "TelaVisualizarAlugueisClientes";
-            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -104,9 +89,8 @@
         #endregion
 
         private Label lblFesta;
-        private GroupBox groupBox1;
-        private ListBox listAluguel;
         private Label label1;
         private Button btnCancelar;
+        private ModuloAluguel.TabelaAluguelControl tabelaAluguelControl1;
     }
 }

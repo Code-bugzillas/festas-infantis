@@ -139,7 +139,6 @@
             btnInserir.Name = "btnInserir";
             btnInserir.Padding = new Padding(7);
             btnInserir.Size = new Size(50, 50);
-            btnInserir.Text = "toolStripButton1";
             btnInserir.Click += btnInserir_Click;
             // 
             // btnEditar
@@ -152,7 +151,6 @@
             btnEditar.Name = "btnEditar";
             btnEditar.Padding = new Padding(7);
             btnEditar.Size = new Size(50, 50);
-            btnEditar.Text = "toolStripButton2";
             btnEditar.Click += btnEditar_Click;
             // 
             // btnExcluir
@@ -165,7 +163,6 @@
             btnExcluir.Name = "btnExcluir";
             btnExcluir.Padding = new Padding(7);
             btnExcluir.Size = new Size(50, 50);
-            btnExcluir.Text = "toolStripButton3";
             btnExcluir.Click += btnExcluir_Click;
             // 
             // toolStripSeparator1
@@ -183,7 +180,6 @@
             btnPagamento.Name = "btnPagamento";
             btnPagamento.Padding = new Padding(7);
             btnPagamento.Size = new Size(50, 50);
-            btnPagamento.Text = "toolStripButton4";
             btnPagamento.Click += btnPagamento_Click_1;
             // 
             // btnVisualizar
@@ -196,7 +192,6 @@
             btnVisualizar.Name = "btnVisualizar";
             btnVisualizar.Padding = new Padding(7);
             btnVisualizar.Size = new Size(50, 50);
-            btnVisualizar.Text = "toolStripButton1";
             btnVisualizar.Click += btnVisualizar_Click;
             // 
             // toolStripSeparator2
