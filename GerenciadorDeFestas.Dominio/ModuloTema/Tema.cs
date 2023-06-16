@@ -50,7 +50,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloTema
             List<string> erros = new List<string>();
 
             if (string.IsNullOrEmpty(nome))
-                erros.Add("O campo nome é obrigatório");
+                erros.Add("O campo tema é obrigatório");
 
             if (valor == -1)
                 erros.Add("O campo valor é obrigatório");

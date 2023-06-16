@@ -65,14 +65,13 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
 
             foreach (Cliente c in clientes)
             {
-                if (cliente.nome == c.nome)
+                if (cliente.nome == c.nome && txtId.Text == "0")
                 {
-                    MessageBox.Show("O nome ja esta em uso");
+                    TelaPrincipalForm.Instancia.AtualizarRodape("O nome ja esta em uso");
 
                     DialogResult = DialogResult.None;
                 }
             }
         }
-
     }
 }

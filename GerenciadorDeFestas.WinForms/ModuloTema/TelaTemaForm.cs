@@ -94,9 +94,9 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
 
             foreach (Tema t in temas)
             {
-                if (tema.nome == t.nome)
+                if (tema.nome == t.nome && txtId.Text == "0")
                 {
-                    MessageBox.Show("O nome já está em uso");
+                    TelaPrincipalForm.Instancia.AtualizarRodape("O nome ja esta em uso");
                     DialogResult = DialogResult.None;
                 }
             }

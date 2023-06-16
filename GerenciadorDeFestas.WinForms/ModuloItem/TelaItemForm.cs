@@ -63,9 +63,9 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
 
             foreach(Item t in itens)
             {
-                if(t.nome == item.nome)
+                if(t.nome == item.nome && txtId.Text == "0")
                 {
-                    MessageBox.Show("O nome já está em uso");
+                    TelaPrincipalForm.Instancia.AtualizarRodape("O nome ja esta em uso");
 
                     DialogResult = DialogResult.None;
                 }

@@ -1,7 +1,6 @@
 ﻿using GerenciadorDeFestas.Dominio.ModuloAluguel;
 using GerenciadorDeFestas.Dominio.ModuloCliente;
 using GerenciadorDeFestas.Dominio.ModuloTema;
-using GerenciadorDeFestas.Infra.Dados.Arquivo.Compartilhado;
 using GerenciadorDeFestas.WinForms.Compartilhado;
 
 namespace GerenciadorDeFestas.WinForms.ModuloAluguel
@@ -92,6 +91,5 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
                 DialogResult = DialogResult.None;
             }
         }
-
     }
 }

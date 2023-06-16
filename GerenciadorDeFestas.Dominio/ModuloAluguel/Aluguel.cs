@@ -57,23 +57,27 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
         {
             List<string> erros = new List<string>();
 
-            if (string.IsNullOrEmpty(cidade))
-                erros.Add("O campo 'Cidade' é obrigatório");
-
-            if (string.IsNullOrEmpty(rua))
-                erros.Add("O campo 'Rua' é obrigatório");
-
-            if (string.IsNullOrEmpty(numero))
-                erros.Add("O campo 'Numero' é obrigatório");
-
-            if (horaInicio > horaFinal)
-                erros.Add("A hora inicial não pode ser maior que a hora final");
 
             if (cliente == null)
                 erros.Add("O campo 'cliente' é obrigatório");
 
             if (tema == null)
                 erros.Add("O campo 'tema' é obrigatório");
+
+            if (data == DateTime.Now.Date)
+                erros.Add("O campo data deve possuir uma data maior do que a de hoje");
+
+            if (horaInicio > horaFinal)
+                erros.Add("A hora inicial não pode ser maior que a hora final");
+
+            if (string.IsNullOrEmpty(cidade))
+                erros.Add("O campo 'Cidade' é obrigatório");
+
+            if (string.IsNullOrEmpty(numero))
+                erros.Add("O campo 'Numero' é obrigatório");
+
+            if (string.IsNullOrEmpty(rua))
+                erros.Add("O campo 'Rua' é obrigatório");
 
             return erros.ToArray();
         }
