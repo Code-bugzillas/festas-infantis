@@ -36,7 +36,11 @@
 <li>Possibilidade de Adicionar, Editar, Visualizar e Excluir (CRUD)</li>
 <li>Possibilidade de visualizar detalhes dos alugueis</li>
 <li>Funcionalidade de calcular o preço de entrada que o cliente pagou com apenas um botão</li>
+
+<h2 align="center">Equipe 💬</h2>
   
-  
+> Trabalho feito para a Academia do Programador <br>
+> Por: Bruno Mello, Camila Mafioletti & Diego Oliveira <br>
   
 </body>
+

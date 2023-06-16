@@ -40,6 +40,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
             {
                 Tema tema = telaTemaForm.ObterTema();
 
+                for (int i = 0; i < tema.itens.Count; i++)
+                {
+                    tema.itens[i].temas.Add(tema);
+                }
+
                 decimal valor = tema.CalcularValor();
 
                 tema.resultado = valor;
@@ -97,6 +102,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
 
             if (opcaoEscolhida == DialogResult.OK)
             {
+                for (int i = 0; i < tema.itens.Count(); i++)
+                {
+                    tema.itens[i].temas.Remove(tema);
+                }
+
                 repositorioTema.Excluir(tema);
 
                 CarregarTemas();

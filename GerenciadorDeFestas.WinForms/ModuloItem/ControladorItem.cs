@@ -82,11 +82,22 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
                 return;
             }
 
+            if (item.temas.Count > 0)
+            {
+                MessageBox.Show($"O item não pode ser excluído pois está em uso!",
+                    "Exclusão de Itens",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+
+                return;
+            }
+
             DialogResult opcaoEscolhida = MessageBox.Show($"Deseja excluir o item {item.nome}?", "Exclusão de Itens",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
             if (opcaoEscolhida == DialogResult.OK)
             {
+
                 repositorioItem.Excluir(item);
 
                 CarregarItens();
