@@ -13,7 +13,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
         public DateTime data;
         public DateTime horaInicio;
         public DateTime horaFinal;
-        public string cep;
+        public string cidade;
         public string numero;
         public string rua;
         public bool pagamentoFinalizado;
@@ -22,14 +22,14 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
         public decimal porcentagemPaga;
         public decimal valorAhPagar;
 
-        public Aluguel(Cliente cliente, Tema tema, DateTime data, DateTime horaInicio, DateTime horaFinal, string cep, string numero, string rua)
+        public Aluguel(Cliente cliente, Tema tema, DateTime data, DateTime horaInicio, DateTime horaFinal, string cidade, string numero, string rua)
         {
             this.cliente = cliente;
             this.tema = tema;
             this.data = data;
             this.horaInicio = horaInicio;
             this.horaFinal = horaFinal;
-            this.cep = cep;
+            this.cidade = cidade;
             this.numero = numero;
             this.rua = rua;
         }
@@ -48,7 +48,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
             this.horaInicio = registroAtualizado.horaInicio;
             this.horaFinal = registroAtualizado.horaFinal;
             this.rua = registroAtualizado.rua;
-            this.cep = registroAtualizado.cep;
+            this.cidade = registroAtualizado.cidade;
             this.numero = registroAtualizado.numero;
             this.valorAhPagar = registroAtualizado.valorAhPagar;
         }
@@ -57,8 +57,8 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
         {
             List<string> erros = new List<string>();
 
-            if (string.IsNullOrEmpty(cep))
-                erros.Add("O campo 'CEP' é obrigatório");
+            if (string.IsNullOrEmpty(cidade))
+                erros.Add("O campo 'Cidade' é obrigatório");
 
             if (string.IsNullOrEmpty(rua))
                 erros.Add("O campo 'Rua' é obrigatório");
@@ -116,7 +116,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
                    $"Data: {data.ToString("dd/MM/yyyy")}\n" +
                    $"Hora Inicio: {horaInicio.ToString("HH:mm")}\n" +
                    $"Hora Final: {horaFinal.ToString("HH:mm")}\n" +
-                   $"CEP: {cep}\n" +
+                   $"Cidade: {cidade}\n" +
                    $"Rua: {rua}\n" +
                    $"Numero: {numero}";
         }

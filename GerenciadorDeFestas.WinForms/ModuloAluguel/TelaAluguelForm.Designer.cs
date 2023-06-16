@@ -46,7 +46,7 @@
             groupBox2 = new GroupBox();
             txtRua = new TextBox();
             txtNum = new TextBox();
-            txtCep = new TextBox();
+            txtCidade = new TextBox();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
@@ -207,7 +207,7 @@
             // 
             groupBox2.Controls.Add(txtRua);
             groupBox2.Controls.Add(txtNum);
-            groupBox2.Controls.Add(txtCep);
+            groupBox2.Controls.Add(txtCidade);
             groupBox2.Controls.Add(label7);
             groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(label9);
@@ -232,12 +232,12 @@
             txtNum.Size = new Size(50, 23);
             txtNum.TabIndex = 7;
             // 
-            // txtCep
+            // txtCidade
             // 
-            txtCep.Location = new Point(78, 22);
-            txtCep.Name = "txtCep";
-            txtCep.Size = new Size(100, 23);
-            txtCep.TabIndex = 6;
+            txtCidade.Location = new Point(78, 22);
+            txtCidade.Name = "txtCidade";
+            txtCidade.Size = new Size(100, 23);
+            txtCidade.TabIndex = 6;
             // 
             // label7
             // 
@@ -260,11 +260,11 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(44, 28);
+            label9.Location = new Point(28, 25);
             label9.Name = "label9";
-            label9.Size = new Size(28, 15);
+            label9.Size = new Size(44, 15);
             label9.TabIndex = 3;
-            label9.Text = "CEP";
+            label9.Text = "Cidade";
             // 
             // TelaAluguelForm
             // 
@@ -312,7 +312,7 @@
         private GroupBox groupBox2;
         private TextBox txtRua;
         private TextBox txtNum;
-        private TextBox txtCep;
+        private TextBox txtCidade;
         private Label label7;
         private Label label8;
         private Label label9;

@@ -24,11 +24,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
             DateTime data = dtData.Value;
             DateTime horaInicio = dtHoraInicio.Value;
             DateTime horaFinal = dtHoraFinal.Value;
-            string Cep = txtCep.Text;
+            string Cidade = txtCidade.Text;
             string numero = txtNum.Text;
             string nomeRua = txtRua.Text;
 
-            Aluguel aluguel = new Aluguel(cliente, tema, data, horaInicio, horaFinal, Cep, numero, nomeRua);
+            Aluguel aluguel = new Aluguel(cliente, tema, data, horaInicio, horaFinal, Cidade, numero, nomeRua);
 
             aluguel.id = id;
 
@@ -49,9 +49,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
             dtData.Value = aluguelSelecionado.data;
             dtHoraInicio.Value = aluguelSelecionado.horaInicio;
             dtHoraFinal.Value = aluguelSelecionado.horaFinal;
-            txtCep.Text = aluguelSelecionado.cep;
+            txtCidade.Text = aluguelSelecionado.cidade;
             txtNum.Text = aluguelSelecionado.numero;
             txtRua.Text = aluguelSelecionado.rua;
+            cbCliente.Enabled = false;
+            cbTema.Enabled = false;
         }
 
         public void ConfigurarComboBoxClientes(List<Cliente> clientes)
