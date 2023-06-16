@@ -37,6 +37,7 @@
 <li>Possibilidade de visualizar detalhes dos alugueis</li>
 <li>Funcionalidade de calcular o preço de entrada que o cliente pagou com apenas um botão</li>
   
-  
+> Trabalho feito para a Academia do Programador <br>
+> Por: Bruno Mello, Camila Mafioletti & Diego Oliveira <br>
   
 </body>
