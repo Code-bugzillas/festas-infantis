@@ -1,6 +1,7 @@
 ﻿using GerenciadorDeFestas.Dominio.ModuloAluguel;
 using GerenciadorDeFestas.Dominio.ModuloCliente;
 using GerenciadorDeFestas.Dominio.ModuloTema;
+using GerenciadorDeFestas.Infra.Dados.Arquivo.Compartilhado;
 using GerenciadorDeFestas.WinForms.Compartilhado;
 
 namespace GerenciadorDeFestas.WinForms.ModuloAluguel
@@ -29,7 +30,6 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
             string nomeRua = txtRua.Text;
 
             Aluguel aluguel = new Aluguel(cliente, tema, data, horaInicio, horaFinal, Cidade, numero, nomeRua);
-
             aluguel.id = id;
 
             if (tema != null)

@@ -31,8 +31,8 @@
             btnCancelar = new Button();
             label1 = new Label();
             groupBox1 = new GroupBox();
-            listFestas = new ListBox();
             lblFesta = new Label();
+            listFestas = new ListBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -41,9 +41,9 @@
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancelar.BackColor = Color.PowderBlue;
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(11, 282);
+            btnCancelar.Location = new Point(15, 336);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(325, 41);
+            btnCancelar.Size = new Size(315, 41);
             btnCancelar.TabIndex = 8;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
@@ -62,19 +62,10 @@
             groupBox1.Controls.Add(listFestas);
             groupBox1.Location = new Point(12, 49);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(324, 227);
+            groupBox1.Size = new Size(318, 281);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Detalhes da Festa";
-            // 
-            // listFestas
-            // 
-            listFestas.FormattingEnabled = true;
-            listFestas.ItemHeight = 15;
-            listFestas.Location = new Point(6, 22);
-            listFestas.Name = "listFestas";
-            listFestas.Size = new Size(312, 199);
-            listFestas.TabIndex = 0;
             // 
             // lblFesta
             // 
@@ -85,11 +76,21 @@
             lblFesta.TabIndex = 11;
             lblFesta.Text = "---------";
             // 
+            // listFestas
+            // 
+            listFestas.Dock = DockStyle.Fill;
+            listFestas.FormattingEnabled = true;
+            listFestas.ItemHeight = 15;
+            listFestas.Location = new Point(3, 19);
+            listFestas.Name = "listFestas";
+            listFestas.Size = new Size(312, 259);
+            listFestas.TabIndex = 0;
+            // 
             // TelaVisualizarForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(348, 335);
+            ClientSize = new Size(351, 389);
             Controls.Add(lblFesta);
             Controls.Add(groupBox1);
             Controls.Add(label1);
@@ -106,7 +107,7 @@
         private Button btnCancelar;
         private Label label1;
         private GroupBox groupBox1;
-        private ListBox listFestas;
         private Label lblFesta;
+        private ListBox listFestas;
     }
 }

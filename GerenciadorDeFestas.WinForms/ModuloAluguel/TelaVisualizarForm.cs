@@ -11,8 +11,8 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
             InitializeComponent();
 
             this.ConfigurarDialog();
-            AtualizarLista(aluguelSelecionado);
 
+            AtualizarLista(aluguelSelecionado);
         }
 
         private void AtualizarLista(Aluguel aluguelSelecionado)

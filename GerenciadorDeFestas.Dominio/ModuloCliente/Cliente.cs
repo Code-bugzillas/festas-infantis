@@ -1,4 +1,5 @@
 ﻿using GerenciadorDeFestas.Dominio.Compartilhado;
+using GerenciadorDeFestas.Dominio.ModuloAluguel;
 
 namespace GerenciadorDeFestas.Dominio.ModuloCliente
 {
@@ -9,6 +10,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloCliente
         public string telefone;
         public bool clienteAntigo;
         public bool clienteNovo;
+        public List<Aluguel> aluguels;
 
         public Cliente( string nome, string telefone, bool clienteAntigo, bool clienteNovo)
         {
@@ -16,6 +18,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloCliente
             this.telefone = telefone;
             this.clienteAntigo = clienteAntigo;
             this.clienteNovo = clienteNovo;
+            aluguels = new List<Aluguel>();
         }
 
         public Cliente()
@@ -62,5 +65,6 @@ namespace GerenciadorDeFestas.Dominio.ModuloCliente
                    nome == cliente.nome &&
                    telefone == cliente.telefone;
         }
+
     }
 }

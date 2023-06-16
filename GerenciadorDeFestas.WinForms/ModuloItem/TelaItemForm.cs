@@ -6,11 +6,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
 {
     public partial class TelaItemForm : Form
     {
-        private ContextoDados contextoDados;
+        private List<Item> itens;
 
-        public TelaItemForm(List<Item> itens, ContextoDados contextoDados)
+        public TelaItemForm(List<Item> itens)
         {
-            this.contextoDados = contextoDados;
+            this.itens = itens;
             InitializeComponent();
             this.ConfigurarDialog();
         }
@@ -61,7 +61,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
                 DialogResult = DialogResult.None;
             }
 
-            foreach(Item t in contextoDados.itens)
+            foreach(Item t in itens)
             {
                 if(t.nome == item.nome)
                 {

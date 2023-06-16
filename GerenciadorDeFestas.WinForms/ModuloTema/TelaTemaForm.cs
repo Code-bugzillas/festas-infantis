@@ -7,11 +7,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
 {
     public partial class TelaTemaForm : Form
     {
-        private ContextoDados contextoTema;
+        private List<Tema> temas;
 
-        public TelaTemaForm(List<Item> itens, ContextoDados contextoTema)
+        public TelaTemaForm(List<Item> itens, List<Tema> temas)
         {
-            this.contextoTema = contextoTema;
+            this.temas = temas;
 
             InitializeComponent();
 
@@ -92,7 +92,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
                 DialogResult = DialogResult.None;
             }
 
-            foreach (Tema t in contextoTema.temas)
+            foreach (Tema t in temas)
             {
                 if (tema.nome == t.nome)
                 {

@@ -1,6 +1,7 @@
 ﻿using GerenciadorDeFestas.Dominio.ModuloAluguel;
 using GerenciadorDeFestas.Dominio.ModuloCliente;
 using GerenciadorDeFestas.Dominio.ModuloTema;
+using GerenciadorDeFestas.Infra.Dados.Arquivo.Compartilhado;
 using GerenciadorDeFestas.WinForms.Compartilhado;
 using GerenciadorDeFestas.WinForms.ModuloCliente;
 
@@ -11,7 +12,6 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
         private IRepositorioCliente repositorioCliente;
         private IRepositorioTema repositorioTema;
         private IRepositorioAluguel repositorioAluguel;
-
         private TabelaAluguelControl tabelaAluguel;
 
         public ControladorAluguel(IRepositorioAluguel repositorioAluguel, IRepositorioCliente repositorioCliente, IRepositorioTema repositorioTema)
@@ -43,8 +43,9 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
             {
                 Aluguel aluguel = telaAluguel.ObterAluguel();
 
-                if (aluguel == null)
-                    return;
+                if (aluguel == null) return;
+
+                aluguel.cliente.aluguels.Add(aluguel);
 
                 repositorioAluguel.Inserir(aluguel);
 
@@ -100,6 +101,14 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
             if (opcaoEscolhida == DialogResult.OK)
             {
+                for(int i = 0; i < aluguel.cliente.aluguels.Count(); i++)
+                {
+                    if (aluguel.cliente.aluguels[i] == aluguel)
+                    {
+                        aluguel.cliente.aluguels.Remove(aluguel.cliente.aluguels[i]);
+                    }
+                }
+
                 repositorioAluguel.Excluir(aluguel);
 
                 CarregarAlugueis();
@@ -175,8 +184,6 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
                 MessageBox.Show("Selecione um aluguel!");
                 return;
             }
-
-            List<Aluguel> lista = repositorioAluguel.SelecionarTodos();
 
             TelaVisualizarForm tela = new TelaVisualizarForm(aluguel);
 

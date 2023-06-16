@@ -9,18 +9,15 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
 {
     public class ControladorTema : ControladorBase
     {
-        private ContextoDados contextoDados;
         private IRepositorioItem repositorioItem;
         private IRepositorioTema repositorioTema;
         private TabelaTemaControl tabelaTemaControl;
 
-        public ControladorTema(IRepositorioItem repositorioItem, IRepositorioTema repositorioTema, ContextoDados contextoDados)
+        public ControladorTema(IRepositorioItem repositorioItem, IRepositorioTema repositorioTema)
         {
-            this.contextoDados = contextoDados;
             this.repositorioItem = repositorioItem;
             this.repositorioTema = repositorioTema;
         }
-
 
         #region
         public override string ToolTipInserir => "Inserir tema";
@@ -35,7 +32,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
 
         public override void Inserir()
         {
-            TelaTemaForm telaTemaForm = new TelaTemaForm(repositorioItem.SelecionarTodos(), contextoDados);
+            TelaTemaForm telaTemaForm = new TelaTemaForm(repositorioItem.SelecionarTodos(), repositorioTema.SelecionarTodos());
 
             DialogResult opcaoEscolhida = telaTemaForm.ShowDialog();
 
@@ -66,7 +63,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
                 return;
             }
 
-            TelaTemaForm telaTema = new TelaTemaForm(repositorioItem.SelecionarTodos(), contextoDados);
+            TelaTemaForm telaTema = new TelaTemaForm(repositorioItem.SelecionarTodos(), repositorioTema.SelecionarTodos());
             telaTema.ConfigurarTela(temaSelecionado);
 
             DialogResult opcaoEscolhida = telaTema.ShowDialog();
@@ -93,19 +90,6 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
                     MessageBoxIcon.Exclamation);
 
                 return;
-            }
-
-            foreach(Aluguel a in contextoDados.alugueis)
-            {
-                if(a.tema == tema)
-                {
-                    MessageBox.Show($"O tema não pode ser excluído pois está em uso",
-                    "Exclusão de Temas",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-                    return;
-                }
-
             }
 
             DialogResult opcaoEscolhida = MessageBox.Show($"Deseja excluir o tema {tema.nome}?", "Exclusão de Temas",

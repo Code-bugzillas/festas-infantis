@@ -100,21 +100,21 @@ namespace GerenciadorDeFestas.WinForms
 
         private void clientesMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorCliente(repositorioCliente, contexto);
+            controlador = new ControladorCliente(repositorioCliente);
 
             ConfigurarTelaPrincipal(controlador);
         }
 
         private void TemasMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorTema(repositorioItem, repositorioTema, contexto);
+            controlador = new ControladorTema(repositorioItem, repositorioTema);
 
             ConfigurarTelaPrincipal(controlador);
         }
 
         private void ItensMenuItem_Click(object sender, EventArgs e)
         {
-            controlador = new ControladorItem(repositorioItem, contexto);
+            controlador = new ControladorItem(repositorioItem);
 
             ConfigurarTelaPrincipal(controlador);
         }

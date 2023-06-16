@@ -1,4 +1,5 @@
-﻿using GerenciadorDeFestas.Dominio.ModuloCliente;
+﻿using GerenciadorDeFestas.Dominio.ModuloAluguel;
+using GerenciadorDeFestas.Dominio.ModuloCliente;
 using GerenciadorDeFestas.Infra.Dados.Arquivo.Compartilhado;
 using GerenciadorDeFestas.WinForms.Compartilhado;
 
@@ -7,11 +8,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
     public partial class TelaClienteForm : Form
     {
         private Cliente cliente;
-        private ContextoDados contextoDados;
+        private List<Cliente> clientes;
 
-        public TelaClienteForm(List<Cliente> clientes, ContextoDados contextoDados)
+        public TelaClienteForm(List<Cliente> clientes)
         {
-            this.contextoDados = contextoDados;
+            this.clientes = clientes;
 
             InitializeComponent();
 
@@ -25,7 +26,6 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
             string telefone = txtTelefone.Text;
             bool clienteAntigo = rdbAntigo.Checked;
             bool clienteNovo = rdbNovo.Checked;
-
 
             cliente = new Cliente(nome, telefone, clienteAntigo, clienteNovo);
             cliente.id = id;
@@ -63,7 +63,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
                 DialogResult = DialogResult.None;
             }
 
-            foreach (Cliente c in contextoDados.clientes)
+            foreach (Cliente c in clientes)
             {
                 if (cliente.nome == c.nome)
                 {
