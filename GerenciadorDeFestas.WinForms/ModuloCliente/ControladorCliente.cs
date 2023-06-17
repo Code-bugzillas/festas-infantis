@@ -8,10 +8,9 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
 {
     public class ControladorCliente : ControladorBase
     {
-
         private IRepositorioCliente repositorioCliente;
         private TabelaClienteControl tabelaCliente;
-        
+        private TabelaAluguelControl tabelaAluguel;
 
         public ControladorCliente(IRepositorioCliente repositorioCliente)
         {
@@ -140,11 +139,26 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
         {
             Cliente cliente = ObterClienteSelecionado();
 
-            TelaVisualizarAlugueis telaVisualizarAlugueis = new TelaVisualizarAlugueis(cliente);
+            TelaVisualizarAlugueisForm telaListagemAlugueis = new TelaVisualizarAlugueisForm(cliente);
 
-            telaVisualizarAlugueis.CarregarLabel(cliente);
+            if (tabelaAluguel == null)
+                tabelaAluguel = new TabelaAluguelControl();
 
-            telaVisualizarAlugueis.ShowDialog();
+            if (cliente == null)
+            {
+                MessageBox.Show($"Selecione um cliente primeiro!",
+                    "Listagem de alugueis",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+
+                return;
+            }
+
+            telaListagemAlugueis.CarregarLabel(cliente);
+
+            telaListagemAlugueis.CarregarRegistros(cliente.alugueis);
+
+            telaListagemAlugueis.ShowDialog();
         }
     }
 }

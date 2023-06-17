@@ -96,7 +96,7 @@
             Controls.Add(label1);
             Controls.Add(btnCancelar);
             Name = "TelaVisualizarItensForm";
-            Text = "TelaVisualizarItensForm";
+            Text = "Visualizar Itens";
             groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();

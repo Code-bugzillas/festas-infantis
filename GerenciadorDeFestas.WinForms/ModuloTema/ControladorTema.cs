@@ -144,19 +144,24 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
 
         public override void Visualizar()
         {
-            //Tema tema = ObterTemaSelecionado();
+            Tema tema = ObterTemaSelecionado();
 
-            //if (tema == null)
-            //{
-            //    MessageBox.Show("Selecione um tema!");
-            //    return;
-            //}
+            TelaVisualizarItensForm telaListagem = new TelaVisualizarItensForm();
 
-            //TelaVisualizarItensForm tela = new TelaVisualizarItensForm();
+            if (tema == null)
+            {
+                MessageBox.Show($"Selecione um tema primeiro!",
+                    "Listagem de itens",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+                return;
+            }
 
-            //tela.CarregarLabel(tema);
+            telaListagem.CarregarLabel(tema);
 
-            //tela.ShowDialog();
+            telaListagem.CarregarLista(tema.itens);
+
+            telaListagem.ShowDialog();
         }
     }
 }

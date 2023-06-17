@@ -35,7 +35,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
             else if (rdbCem.Checked)
                 return aluguelSelecionado.porcentagemPaga = 100;
-            
+
             return aluguelSelecionado.porcentagemPaga = 0;
         }
     }

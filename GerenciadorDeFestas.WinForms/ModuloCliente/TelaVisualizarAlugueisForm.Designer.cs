@@ -1,6 +1,6 @@
 ﻿namespace GerenciadorDeFestas.WinForms.ModuloCliente
 {
-    partial class TelaVisualizarAlugueis
+    partial class TelaVisualizarAlugueisForm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,13 +31,13 @@
             lblFesta = new Label();
             label1 = new Label();
             btnCancelar = new Button();
-            tabelaAluguelControl1 = new ModuloAluguel.TabelaAluguelControl();
+            tabela = new ModuloAluguel.TabelaAluguelControl();
             SuspendLayout();
             // 
             // lblFesta
             // 
             lblFesta.AutoSize = true;
-            lblFesta.Location = new Point(70, 28);
+            lblFesta.Location = new Point(80, 28);
             lblFesta.Name = "lblFesta";
             lblFesta.Size = new Size(52, 15);
             lblFesta.TabIndex = 15;
@@ -64,19 +64,19 @@
             btnCancelar.Text = "OK";
             btnCancelar.UseVisualStyleBackColor = false;
             // 
-            // tabelaAluguelControl1
+            // tabela
             // 
-            tabelaAluguelControl1.Location = new Point(27, 58);
-            tabelaAluguelControl1.Name = "tabelaAluguelControl1";
-            tabelaAluguelControl1.Size = new Size(578, 269);
-            tabelaAluguelControl1.TabIndex = 16;
+            tabela.Location = new Point(27, 58);
+            tabela.Name = "tabela";
+            tabela.Size = new Size(578, 269);
+            tabela.TabIndex = 16;
             // 
             // TelaVisualizarAlugueis
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(617, 416);
-            Controls.Add(tabelaAluguelControl1);
+            Controls.Add(tabela);
             Controls.Add(lblFesta);
             Controls.Add(label1);
             Controls.Add(btnCancelar);
@@ -91,6 +91,6 @@
         private Label lblFesta;
         private Label label1;
         private Button btnCancelar;
-        private ModuloAluguel.TabelaAluguelControl tabelaAluguelControl1;
+        private ModuloAluguel.TabelaAluguelControl tabela;
     }
 }

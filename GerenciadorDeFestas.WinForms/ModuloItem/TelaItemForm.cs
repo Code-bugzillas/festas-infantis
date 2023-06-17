@@ -61,9 +61,9 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
                 DialogResult = DialogResult.None;
             }
 
-            foreach(Item t in itens)
+            foreach (Item t in itens)
             {
-                if(t.nome == item.nome && txtId.Text == "0")
+                if (t.nome == item.nome && txtId.Text == "0")
                 {
                     TelaPrincipalForm.Instancia.AtualizarRodape("O nome ja esta em uso");
 

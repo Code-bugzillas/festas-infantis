@@ -136,7 +136,7 @@
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
             Name = "TelaPagamentoForm";
-            Text = "TelaPagamentoForm";
+            Text = "Gerenciador de Pagamento";
             ResumeLayout(false);
             PerformLayout();
         }

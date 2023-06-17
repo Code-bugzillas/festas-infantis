@@ -242,6 +242,7 @@
             MainMenuStrip = menuBar;
             Name = "TelaPrincipalForm";
             ShowIcon = false;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Gerenciador de Festas";
             menuBar.ResumeLayout(false);
             menuBar.PerformLayout();
