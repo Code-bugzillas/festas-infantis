@@ -103,7 +103,7 @@
             // 
             txtValor.Location = new Point(105, 46);
             txtValor.Name = "txtValor";
-            txtValor.Size = new Size(110, 23);
+            txtValor.Size = new Size(79, 23);
             txtValor.TabIndex = 15;
             // 
             // label1

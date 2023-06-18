@@ -60,7 +60,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
                 new DataGridViewTextBoxColumn()
                 {
                     Name = "pago",
-                    HeaderText = "% paga"
+                    HeaderText = "Entrada"
                 },
                 new DataGridViewTextBoxColumn()
                 {

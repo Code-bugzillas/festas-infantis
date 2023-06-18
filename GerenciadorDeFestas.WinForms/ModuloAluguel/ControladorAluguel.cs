@@ -156,6 +156,23 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
             }
         }
 
+        public override void Visualizar()
+        {
+            Aluguel aluguel = ObterAluguelSelecionado();
+
+            if (aluguel == null)
+            {
+                MessageBox.Show("Selecione um aluguel!");
+                return;
+            }
+
+            TelaVisualizarForm tela = new TelaVisualizarForm(aluguel);
+
+            tela.CarregarLabel(aluguel);
+
+            tela.ShowDialog();
+        }
+
         private Aluguel ObterAluguelSelecionado()
         {
             int id = tabelaAluguel.ObterIdSelecionado();
@@ -183,23 +200,6 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
         public override string ObterTipoCadastro()
         {
             return "Cadastro de Aluguel";
-        }
-
-        public override void Visualizar()
-        {
-            Aluguel aluguel = ObterAluguelSelecionado();
-
-            if (aluguel == null)
-            {
-                MessageBox.Show("Selecione um aluguel!");
-                return;
-            }
-
-            TelaVisualizarForm tela = new TelaVisualizarForm(aluguel);
-
-            tela.CarregarLabel(aluguel);
-
-            tela.ShowDialog();
         }
     }
 }

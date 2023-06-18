@@ -21,6 +21,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
         public DateTime dataFechamento;
         public decimal porcentagemPaga;
         public decimal valorAhPagar;
+        public decimal desconto;
 
         public Aluguel(Cliente cliente, Tema tema, DateTime data, DateTime horaInicio, DateTime horaFinal, string cidade, string numero, string rua)
         {

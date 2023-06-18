@@ -61,7 +61,7 @@
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(578, 41);
             btnCancelar.TabIndex = 12;
-            btnCancelar.Text = "OK";
+            btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
             // 
             // tabela
@@ -71,16 +71,17 @@
             tabela.Size = new Size(578, 269);
             tabela.TabIndex = 16;
             // 
-            // TelaVisualizarAlugueis
+            // TelaVisualizarAlugueisForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.AliceBlue;
             ClientSize = new Size(617, 416);
             Controls.Add(tabela);
             Controls.Add(lblFesta);
             Controls.Add(label1);
             Controls.Add(btnCancelar);
-            Name = "TelaVisualizarAlugueis";
+            Name = "TelaVisualizarAlugueisForm";
             Text = "TelaVisualizarAlugueisClientes";
             ResumeLayout(false);
             PerformLayout();

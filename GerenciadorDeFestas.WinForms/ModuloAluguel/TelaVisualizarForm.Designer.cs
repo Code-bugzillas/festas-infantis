@@ -89,6 +89,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.AliceBlue;
             ClientSize = new Size(348, 416);
             Controls.Add(groupBox1);
             Controls.Add(lblFesta);
