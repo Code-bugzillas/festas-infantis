@@ -47,6 +47,9 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
                 aluguel.cliente.alugueis.Add(aluguel);
 
+                aluguel.CalcularValorTotal();
+                aluguel.CalcularValorAPagar();
+
                 repositorioAluguel.Inserir(aluguel);
 
                 CarregarAlugueis();
@@ -75,6 +78,10 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
             if (opcaoEscolhida == DialogResult.OK)
             {
                 Aluguel aluguel = telaAluguel.ObterAluguel();
+
+
+                aluguel.CalcularValorTotal();
+                aluguel.CalcularValorAPagar();
 
                 repositorioAluguel.Editar(aluguel.id, aluguel);
 

@@ -30,9 +30,6 @@
         {
             btnCancelar = new Button();
             btnGravar = new Button();
-            rdbAntigo = new RadioButton();
-            rdbNovo = new RadioButton();
-            label1 = new Label();
             label2 = new Label();
             txtId = new TextBox();
             label3 = new Label();
@@ -46,7 +43,7 @@
             btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancelar.BackColor = Color.PowderBlue;
             btnCancelar.DialogResult = DialogResult.Cancel;
-            btnCancelar.Location = new Point(356, 139);
+            btnCancelar.Location = new Point(356, 103);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(88, 41);
             btnCancelar.TabIndex = 0;
@@ -58,44 +55,13 @@
             btnGravar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnGravar.BackColor = Color.PowderBlue;
             btnGravar.DialogResult = DialogResult.OK;
-            btnGravar.Location = new Point(262, 139);
+            btnGravar.Location = new Point(262, 103);
             btnGravar.Name = "btnGravar";
             btnGravar.Size = new Size(88, 41);
             btnGravar.TabIndex = 1;
             btnGravar.Text = "Gravar";
             btnGravar.UseVisualStyleBackColor = false;
             btnGravar.Click += btnGravar_Click_1;
-            // 
-            // rdbAntigo
-            // 
-            rdbAntigo.AutoSize = true;
-            rdbAntigo.Location = new Point(289, 96);
-            rdbAntigo.Name = "rdbAntigo";
-            rdbAntigo.Size = new Size(61, 19);
-            rdbAntigo.TabIndex = 2;
-            rdbAntigo.TabStop = true;
-            rdbAntigo.Text = "Antigo";
-            rdbAntigo.UseVisualStyleBackColor = true;
-            // 
-            // rdbNovo
-            // 
-            rdbNovo.AutoSize = true;
-            rdbNovo.Location = new Point(222, 96);
-            rdbNovo.Name = "rdbNovo";
-            rdbNovo.Size = new Size(54, 19);
-            rdbNovo.TabIndex = 3;
-            rdbNovo.TabStop = true;
-            rdbNovo.Text = "Novo";
-            rdbNovo.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(78, 96);
-            label1.Name = "label1";
-            label1.Size = new Size(138, 15);
-            label1.TabIndex = 4;
-            label1.Text = "Escolha o tipo de cliente:";
             // 
             // label2
             // 
@@ -153,16 +119,13 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
-            ClientSize = new Size(456, 192);
+            ClientSize = new Size(456, 156);
             Controls.Add(txtTelefone);
             Controls.Add(txtNome);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(txtId);
             Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(rdbNovo);
-            Controls.Add(rdbAntigo);
             Controls.Add(btnGravar);
             Controls.Add(btnCancelar);
             Name = "TelaClienteForm";
@@ -175,9 +138,6 @@
 
         private Button btnCancelar;
         private Button btnGravar;
-        private RadioButton rdbAntigo;
-        private RadioButton rdbNovo;
-        private Label label1;
         private Label label2;
         private TextBox txtId;
         private Label label3;

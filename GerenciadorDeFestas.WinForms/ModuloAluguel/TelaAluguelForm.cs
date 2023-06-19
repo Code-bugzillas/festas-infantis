@@ -33,8 +33,8 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
             if (tema != null)
             {
-                aluguel.valorAhPagar = tema.resultado;
-                aluguel.valorAhPagar = aluguel.CalcularValorAPagar();
+                aluguel.valorTotal = tema.valorTotal;
+                aluguel.valorAhPagar = tema.valorTotal;
             }
 
             return aluguel;

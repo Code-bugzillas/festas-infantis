@@ -22,6 +22,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
         public decimal porcentagemPaga;
         public decimal valorAhPagar;
         public decimal desconto;
+        public decimal valorTotal;
 
         public Aluguel(Cliente cliente, Tema tema, DateTime data, DateTime horaInicio, DateTime horaFinal, string cidade, string numero, string rua)
         {
@@ -52,6 +53,7 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
             this.cidade = registroAtualizado.cidade;
             this.numero = registroAtualizado.numero;
             this.valorAhPagar = registroAtualizado.valorAhPagar;
+            this.dataFechamento = registroAtualizado.dataFechamento;
         }
 
         public override string[] Validar()
@@ -85,25 +87,47 @@ namespace GerenciadorDeFestas.Dominio.ModuloAluguel
 
         public decimal CalcularDesconto()
         {
-            if (cliente.clienteAntigo)
+            int quantidadePedidos = cliente.alugueis.Count;
+
+            switch (quantidadePedidos)
             {
-                return tema.resultado - (tema.resultado * 10/100);
+                case 1: return valorTotal * 0.975m;
+                case 2: return valorTotal * 0.96m;
+                case 3: return valorTotal * 0.945m;
+                case 4: return valorTotal * 0.93m;
+                case 5: return valorTotal * 0.915m;
+                case 6: return valorTotal * 0.9m;
+                case 7: return valorTotal * 0.885m;
+                case 8: return valorTotal * 0.87m;
             }
-            return tema.resultado;
+
+            if (quantidadePedidos >= 9)
+            {
+                return valorTotal * 0.855m;
+            }
+
+            return valorTotal * 0.99m;
         }
+
 
         public decimal CalcularValorAPagar()
         {
-            decimal valorAhPagar = CalcularDesconto();
+            valorAhPagar = valorTotal;
 
             valorAhPagar = valorAhPagar - (valorAhPagar * (porcentagemPaga / 100));
 
             return valorAhPagar;
         }
 
+        public decimal CalcularValorTotal()
+        {
+            return valorTotal = CalcularDesconto();
+        }
+
+
         public void AtualizarPagamento(Aluguel aluguelAtualizado)
         {
-            this.porcentagemPaga = aluguelAtualizado.porcentagemPaga;
+            porcentagemPaga = aluguelAtualizado.porcentagemPaga;
         }
 
         public void FinalizarPagamento()

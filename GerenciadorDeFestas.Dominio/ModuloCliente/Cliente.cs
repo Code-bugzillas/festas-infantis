@@ -9,16 +9,13 @@ namespace GerenciadorDeFestas.Dominio.ModuloCliente
     {
         public string nome;
         public string telefone;
-        public bool clienteAntigo;
-        public bool clienteNovo;
+
         public List<Aluguel> alugueis;
 
-        public Cliente( string nome, string telefone, bool clienteAntigo, bool clienteNovo)
+        public Cliente( string nome, string telefone)
         {
             this.nome = nome;
             this.telefone = telefone;
-            this.clienteAntigo = clienteAntigo;
-            this.clienteNovo = clienteNovo;
             alugueis = new List<Aluguel>();
         }
 
@@ -31,8 +28,6 @@ namespace GerenciadorDeFestas.Dominio.ModuloCliente
         {
             this.nome = registroAtualizado.nome;
             this.telefone = registroAtualizado.telefone;
-            this.clienteAntigo = registroAtualizado.clienteAntigo;
-            this.clienteNovo = registroAtualizado.clienteNovo;
         }
 
         public override string ToString()
@@ -54,9 +49,6 @@ namespace GerenciadorDeFestas.Dominio.ModuloCliente
 
             if (telefone.Length <= 13)
                 erros.Add("O campo 'telefone' é obrigatório");
-
-            if (clienteAntigo == false && clienteNovo == false)
-                erros.Add("O campo cliente é obrigatório");
 
             if (nome.Length <= 2)
                 erros.Add("O campo nome deve ter mais de 2 caracteres");
