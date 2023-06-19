@@ -35,6 +35,26 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
         public override void Inserir()
         {
+            if (repositorioCliente.SelecionarTodos().Count == 0)
+            {
+                MessageBox.Show($"Não há clientes cadastrados!",
+                    "Inserção de aluguéis",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+
+                return;
+            }
+
+            if (repositorioTema.SelecionarTodos().Count == 0)
+            {
+                MessageBox.Show($"Não há temas cadastrados!",
+                    "Inserção de aluguéis",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+
+                return;
+            }
+
             TelaAluguelForm telaAluguel = new TelaAluguelForm(repositorioCliente.SelecionarTodos(), repositorioTema.SelecionarTodos());
 
             DialogResult opcaoEscolhida = telaAluguel.ShowDialog();
@@ -58,6 +78,26 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
         public override void Editar()
         {
+            if (repositorioCliente.SelecionarTodos().Count == 0)
+            {
+                MessageBox.Show($"Não há clientes cadastrados!",
+                    "Edição de aluguéis",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+
+                return;
+            }
+
+            if (repositorioTema.SelecionarTodos().Count == 0)
+            {
+                MessageBox.Show($"Não há temas cadastrados!",
+                    "Edição de aluguéis",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Exclamation);
+
+                return;
+            }
+
             Aluguel aluguelSelecionado = ObterAluguelSelecionado();
 
             if (aluguelSelecionado == null)
@@ -67,6 +107,13 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Exclamation);
 
+                return;
+            }
+
+            if (aluguelSelecionado.pagamentoFinalizado)
+            {
+                MessageBox.Show("Este pagamento já está fechado!", "Pagamentos",
+                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
 
