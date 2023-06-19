@@ -46,10 +46,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
 
             if (itemSelecionado == null)
             {
-                MessageBox.Show($"Selecione um item primeiro!",
-                    "Edição de Itens",
-                    MessageBoxButtons.OK,
-                MessageBoxIcon.Exclamation);
+                ApresentarMensagem("Selecione um item primeiro!", "Edição de Itens");
                 return;
             }
 
@@ -74,21 +71,13 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
 
             if (item == null)
             {
-                MessageBox.Show($"Selecione um item primeiro!",
-                    "Exclusão de Itens",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-
+                ApresentarMensagem("Selecione um item primeiro!", "Exclusão de Itens");
                 return;
             }
 
             if (item.temas.Count > 0)
             {
-                MessageBox.Show($"O item não pode ser excluído pois está em uso!",
-                    "Exclusão de Itens",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-
+                ApresentarMensagem("O item não pode ser excluído pois está em uso!", "Exclusão de Itens");
                 return;
             }
 
@@ -97,7 +86,6 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
 
             if (opcaoEscolhida == DialogResult.OK)
             {
-
                 repositorioItem.Excluir(item);
 
                 CarregarItens();
@@ -131,6 +119,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloItem
         public override string ObterTipoCadastro()
         {
             return "Cadastro de Itens";
+        }
+
+        public override void ApresentarMensagem(string mensagem, string titulo)
+        {
+            MessageBox.Show(mensagem, titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

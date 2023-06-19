@@ -61,10 +61,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
 
             if (temaSelecionado == null)
             {
-                MessageBox.Show($"Selecione um tema primeiro!",
-                    "Edição de Temas",
-                    MessageBoxButtons.OK,
-                MessageBoxIcon.Exclamation);
+                ApresentarMensagem("Selecione um tema primeiro!", "Edição de Temas");
                 return;
             }
 
@@ -89,11 +86,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
 
             if (tema == null)
             {
-                MessageBox.Show($"Selecione um tema primeiro!",
-                    "Exclusão de Temas",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-
+                ApresentarMensagem("Selecione um tema primeiro!", "Exclusão de Temas");
                 return;
             }
 
@@ -150,10 +143,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
 
             if (tema == null)
             {
-                MessageBox.Show($"Selecione um tema primeiro!",
-                    "Listagem de itens",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                ApresentarMensagem("Selecione um tema primeiro!", "Listagem de itens");
                 return;
             }
 
@@ -162,6 +152,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
             telaListagem.CarregarLista(tema.itens);
 
             telaListagem.ShowDialog();
+        }
+
+        public override void ApresentarMensagem(string mensagem, string titulo)
+        {
+            MessageBox.Show(mensagem, titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

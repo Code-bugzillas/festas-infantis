@@ -51,11 +51,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
 
             if (clienteSelecionado == null)
             {
-                MessageBox.Show($"Selecione um cliente primeiro!",
-                    "Edição de Clientes",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-
+                ApresentarMensagem("Selecione um cliente primeiro!", "Edição de Clientes");
                 return;
             }
 
@@ -80,11 +76,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
 
             if (cliente == null)
             {
-                MessageBox.Show($"Selecione um cliente primeiro!",
-                    "Exclusão de Clientes",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-
+                ApresentarMensagem("Selecione um cliente primeiro!", "Exclusão de Clientes");
                 return;
             }
 
@@ -146,11 +138,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
 
             if (cliente == null)
             {
-                MessageBox.Show($"Selecione um cliente primeiro!",
-                    "Listagem de alugueis",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-
+                ApresentarMensagem("Selecione um cliente primeiro!", "Listagem de alugueis");
                 return;
             }
 
@@ -159,6 +147,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloCliente
             telaListagemAlugueis.CarregarRegistros(cliente.alugueis);
 
             telaListagemAlugueis.ShowDialog();
+        }
+
+        public override void ApresentarMensagem(string mensagem, string titulo)
+        {
+            MessageBox.Show(mensagem, titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

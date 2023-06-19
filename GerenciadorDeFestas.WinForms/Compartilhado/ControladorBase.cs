@@ -38,6 +38,8 @@
 
         }
 
+        public abstract void ApresentarMensagem(string mensagem, string titulo);
+
         public abstract UserControl ObterListagem();
 
         public abstract string ObterTipoCadastro();

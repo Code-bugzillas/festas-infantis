@@ -4,6 +4,7 @@ using GerenciadorDeFestas.Dominio.ModuloTema;
 using GerenciadorDeFestas.Infra.Dados.Arquivo.Compartilhado;
 using GerenciadorDeFestas.WinForms.Compartilhado;
 using GerenciadorDeFestas.WinForms.ModuloCliente;
+using System.Windows.Forms;
 
 namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 {
@@ -37,21 +38,13 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
         {
             if (repositorioCliente.SelecionarTodos().Count == 0)
             {
-                MessageBox.Show($"Não há clientes cadastrados!",
-                    "Inserção de aluguéis",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-
+                ApresentarMensagem("Não há clientes cadastrados!", "Inserção de aluguéis");
                 return;
             }
 
             if (repositorioTema.SelecionarTodos().Count == 0)
             {
-                MessageBox.Show($"Não há temas cadastrados!",
-                    "Inserção de aluguéis",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-
+                ApresentarMensagem("Não há temas cadastrados!", "Inserção de aluguéis");
                 return;
             }
 
@@ -80,21 +73,13 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
         {
             if (repositorioCliente.SelecionarTodos().Count == 0)
             {
-                MessageBox.Show($"Não há clientes cadastrados!",
-                    "Edição de aluguéis",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-
+                ApresentarMensagem("Não há clientes cadastrados!", "Edição de aluguéis");
                 return;
             }
 
             if (repositorioTema.SelecionarTodos().Count == 0)
             {
-                MessageBox.Show($"Não há temas cadastrados!",
-                    "Edição de aluguéis",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-
+                ApresentarMensagem("Não há temas cadastrados!", "Edição de aluguéis");
                 return;
             }
 
@@ -102,18 +87,13 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
             if (aluguelSelecionado == null)
             {
-                MessageBox.Show($"Selecione um aluguel primeiro!",
-                    "Edição de Alugueis",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-
+                ApresentarMensagem("Selecione um aluguel primeiro!", "Edição de Alugueis");
                 return;
             }
 
             if (aluguelSelecionado.pagamentoFinalizado)
             {
-                MessageBox.Show("Este pagamento já está fechado!", "Pagamentos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                ApresentarMensagem("Este pagamento já está fechado!", "Pagamentos");
                 return;
             }
 
@@ -142,21 +122,14 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
             if (aluguel == null)
             {
-                MessageBox.Show($"Selecione um aluguel primeiro!",
-                    "Exclusão de Alugueis",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
+                ApresentarMensagem("Selecione um aluguel primeiro!", "Exclusão de Alugueis");
 
                 return;
             }
 
-            if(aluguel.pagamentoFinalizado == false)
+            if (aluguel.pagamentoFinalizado == false)
             {
-                MessageBox.Show($"Não é possível excluir um aluguel não finalizado!",
-                    "Exclusão de Alugueis",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Exclamation);
-
+                ApresentarMensagem("Não é possível excluir um aluguel não finalizado!", "Exclusão de Alugueis");
                 return;
             }
 
@@ -187,8 +160,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
             if (aluguelSelecionado.pagamentoFinalizado)
             {
-                MessageBox.Show("Este pagamento já está fechado!", "Pagamentos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                ApresentarMensagem("Este pagamento já está fechado!", "Pagamentos");
                 return;
             }
 
@@ -202,9 +174,9 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
                 aluguelSelecionado.valorAhPagar = aluguelSelecionado.CalcularValorAPagar();
 
-                repositorioAluguel.AtualizarPagamentoJson(aluguelSelecionado.id, aluguelSelecionado);
-
                 aluguelSelecionado.FinalizarPagamento();
+
+                repositorioAluguel.AtualizarPagamentoJson(aluguelSelecionado.id, aluguelSelecionado);
 
                 CarregarAlugueis();
             }
@@ -254,6 +226,11 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
         public override string ObterTipoCadastro()
         {
             return "Cadastro de Aluguel";
+        }
+
+        public override void ApresentarMensagem(string mensagem, string titulo)
+        {
+            MessageBox.Show(mensagem, titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }
