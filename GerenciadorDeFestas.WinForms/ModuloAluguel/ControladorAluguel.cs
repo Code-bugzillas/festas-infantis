@@ -59,6 +59,7 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
                 if (aluguel == null) return;
 
                 aluguel.cliente.alugueis.Add(aluguel);
+                aluguel.tema.alugueis.Add(aluguel);
 
                 aluguel.CalcularValorTotal();
                 aluguel.CalcularValorAPagar();
@@ -138,11 +139,19 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
             if (opcaoEscolhida == DialogResult.OK)
             {
-                for(int i = 0; i < aluguel.cliente.alugueis.Count(); i++)
+                for (int i = 0; i < aluguel.cliente.alugueis.Count(); i++)
                 {
                     if (aluguel.cliente.alugueis[i] == aluguel)
                     {
                         aluguel.cliente.alugueis.Remove(aluguel.cliente.alugueis[i]);
+                    }
+                }
+
+                for (int i = 0; i < aluguel.tema.alugueis.Count(); i++)
+                {
+                    if (aluguel.tema.alugueis[i] == aluguel)
+                    {
+                        aluguel.tema.alugueis.Remove(aluguel.tema.alugueis[i]);
                     }
                 }
 
@@ -163,6 +172,8 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
                 ApresentarMensagem("Este pagamento já está fechado!", "Pagamentos");
                 return;
             }
+
+            telaPagamento.CarregarLabel(aluguelSelecionado);
 
             telaPagamento.ConfigurarTela(aluguelSelecionado);
 

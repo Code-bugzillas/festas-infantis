@@ -1,4 +1,5 @@
 ﻿using GerenciadorDeFestas.Dominio.ModuloAluguel;
+using GerenciadorDeFestas.Dominio.ModuloCliente;
 using GerenciadorDeFestas.Dominio.ModuloItem;
 using GerenciadorDeFestas.Dominio.ModuloTema;
 using GerenciadorDeFestas.WinForms.Compartilhado;
@@ -93,11 +94,18 @@ namespace GerenciadorDeFestas.WinForms.ModuloTema
             DialogResult opcaoEscolhida = MessageBox.Show($"Deseja excluir o tema {tema.nome}?", "Exclusão de Temas",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
+
             if (opcaoEscolhida == DialogResult.OK)
             {
                 for (int i = 0; i < tema.itens.Count(); i++)
                 {
                     tema.itens[i].temas.Remove(tema);
+                }
+
+                if (tema.alugueis.Count > 0)
+                {
+                    MessageBox.Show("Exclusão inválida, tema possui aluguéis");
+                    return;
                 }
 
                 repositorioTema.Excluir(tema);

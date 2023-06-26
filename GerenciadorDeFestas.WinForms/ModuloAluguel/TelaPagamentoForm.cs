@@ -38,5 +38,10 @@ namespace GerenciadorDeFestas.WinForms.ModuloAluguel
 
             return aluguelSelecionado.porcentagemPaga = 0;
         }
+
+        public void CarregarLabel(Aluguel aluguel)
+        {
+            lblCliente.Text = aluguel.cliente.nome;
+        }
     }
 }

@@ -1,6 +1,4 @@
-﻿using GerenciadorDeFestas.Dominio.ModuloAluguel;
-using GerenciadorDeFestas.Dominio.ModuloCliente;
-using GerenciadorDeFestas.Infra.Dados.Arquivo.Compartilhado;
+﻿using GerenciadorDeFestas.Dominio.ModuloCliente;
 using GerenciadorDeFestas.WinForms.Compartilhado;
 
 namespace GerenciadorDeFestas.WinForms.ModuloCliente
